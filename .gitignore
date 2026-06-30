@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Opencode / OpenWork
+.opencode/
+
+# Node / build artifacts (if any in future)
+node_modules/
+dist/
+.env
+.env.local
