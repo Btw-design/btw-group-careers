@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | BTW Group Careers</title>
+    <meta name="description" content="Read the latest career advice, hiring updates, and insights from BTW Group. Blogs for freshers and job seekers in Mumbai and Thane.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://careers.btwgroup.co/blog/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | BTW Group Careers">
+    <meta property="og:description" content="Read the latest career advice, hiring updates, and insights from BTW Group. Blogs for freshers and job seekers in Mumbai and Thane.">
+    <meta property="og:url" content="https://careers.btwgroup.co/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BTW Group Careers">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1C2D3A;
+            background: #FAFBFC;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        .blog-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #073E61;
+            color: #ffffff;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .blog-nav .brand { font-weight: 700; font-size: 1.05rem; color: #ffffff; text-decoration: none; }
+        .blog-nav .brand span { color: #A5D549; }
+        .blog-nav .nav-links { display: flex; gap: 20px; }
+        .blog-nav .nav-links a { color: #ffffff; text-decoration: none; font-size: 0.88rem; opacity: 0.85; transition: opacity 0.2s; }
+        .blog-nav .nav-links a:hover { opacity: 1; }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #073E61 0%, #0A5A8A 100%);
+            color: #ffffff;
+            padding: 48px 24px;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+        .page-header p { color: #B0C9DA; font-size: 1rem; max-width: 520px; margin: 0 auto; }
+
+        /* Blog List */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 24px 60px; }
+
+        .blog-list { display: flex; flex-direction: column; gap: 20px; }
+
+        .blog-card {
+            background: #ffffff;
+            border: 1px solid #E8EEF8;
+            border-radius: 14px;
+            padding: 28px 32px;
+            transition: box-shadow 0.25s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            box-shadow: 0 8px 30px rgba(7, 62, 97, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .blog-card .tag {
+            display: inline-block;
+            background: #F4FAEC;
+            color: #5A8A2A;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+        .blog-card h2 { font-size: 1.2rem; font-weight: 700; color: #073E61; margin-bottom: 8px; line-height: 1.3; }
+        .blog-card h2 a { color: inherit; text-decoration: none; }
+        .blog-card h2 a:hover { text-decoration: underline; }
+        .blog-card .excerpt { color: #555; font-size: 0.9rem; margin-bottom: 14px; line-height: 1.6; }
+        .blog-card .meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.78rem;
+            color: #8A9BA8;
+            margin-top: auto;
+            align-items: center;
+        }
+        .blog-card .meta .read-more {
+            margin-left: auto;
+            color: #073E61;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.82rem;
+        }
+        .blog-card .meta .read-more:hover { text-decoration: underline; }
+
+        /* Empty state (when no blogs) */
+        .empty-state {
+            text-align: center;
+            padding: 60px 24px;
+            color: #8A9BA8;
+        }
+        .empty-state h2 { font-size: 1.3rem; color: #073E61; margin-bottom: 8px; }
+        .empty-state p { font-size: 0.9rem; }
+
+        /* Footer */
+        .blog-footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.8rem;
+            color: #8A9BA8;
+            border-top: 1px solid #E8EEF8;
+            background: #ffffff;
+        }
+        .blog-footer a { color: #073E61; text-decoration: none; font-weight: 500; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .page-header h1 { font-size: 1.5rem; }
+            .blog-card { padding: 20px 22px; }
+            .blog-card h2 { font-size: 1.05rem; }
+            .container { padding: 24px 16px 40px; }
+            .blog-nav { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="blog-nav">
+        <a href="../index.html" class="brand"><span>BTW</span> Group Careers</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#openings">Openings</a>
+            <a href="index.html" style="opacity:1;">Blog</a>
+            <a href="https://www.btwgroup.co/contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>BTW Group Blog</h1>
+        <p>Career advice, hiring updates, and insights for freshers and job seekers in Mumbai.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="blog-list">
+
+            <!-- ============================================= -->
+            <!-- BLOG ENTRY TEMPLATE                          -->
+            <!--                                               -->
+            <!-- To add a new blog, copy this block, fill in   -->
+            <!-- the values, and paste it below the others.     -->
+            <!-- ============================================= -->
+            <!--
+            <article class="blog-card">
+                <span class="tag">Category</span>
+                <h2><a href="blog-filename.html">Blog Post Title</a></h2>
+                <p class="excerpt">Short summary of the blog post — one or two sentences max.</p>
+                <div class="meta">
+                    <span>Date</span>
+                    <span>&middot;</span>
+                    <span>Author</span>
+                    <a href="blog-filename.html" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+            -->
+
+            <!-- ---- BLOG 2: Top Skills Every Fresher ---- -->
+            <article class="blog-card">
+                <span class="tag">Career Advice</span>
+                <h2><a href="top-skills-every-fresher-should-learn.html">Top Skills Every Fresher Should Learn Before Applying</a></h2>
+                <p class="excerpt">Discover the top skills freshers need before applying for jobs in 2026 — communication, MS Office, problem-solving, and more, with tips from BTW Group.</p>
+                <div class="meta">
+                    <span>Jun 30, 2026</span>
+                    <span>&middot;</span>
+                    <span>BTW Group HR Team</span>
+                    <a href="top-skills-every-fresher-should-learn.html" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+
+            <!-- ---- BLOG 1: Hiring in Thane / Navi Mumbai ---- -->
+            <article class="blog-card">
+                <span class="tag">Hiring</span>
+                <h2><a href="hiring-in-thane-navi-mumbai.html">Hiring in Thane &amp; Navi Mumbai 2025 | BTW Group Careers</a></h2>
+                <p class="excerpt">BTW Group is hiring freshers in Thane and Navi Mumbai. Explore opportunities in visa services, travel, accounts, and sales. Apply online today!</p>
+                <div class="meta">
+                    <span>Jun 30, 2025</span>
+                    <span>&middot;</span>
+                    <span>BTW Group HR Team</span>
+                    <a href="hiring-in-thane-navi-mumbai.html" class="read-more">Read More &rarr;</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- If no blogs are published yet, show this instead of blog-list -->
+        <!--
+        <div class="empty-state">
+            <h2>Coming Soon</h2>
+            <p>We are working on our first blog post. Check back soon for career tips and hiring updates.</p>
+        </div>
+        -->
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <p>&copy; 2026 <a href="https://www.btwgroup.co">BTW Group</a>. All rights reserved. | <a href="https://careers.btwgroup.co">careers.btwgroup.co</a></p>
+    </footer>
+
+</body>
+</html>
