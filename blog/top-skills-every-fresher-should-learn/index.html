@@ -63,8 +63,21 @@
 
         /* Article */
         article h1 { font-size: 2rem; line-height: 1.25; color: #073E61; margin-bottom: 12px; font-weight: 800; }
-        .post-meta { font-size: 0.82rem; color: #8A9BA8; margin-bottom: 30px; display: flex; gap: 16px; flex-wrap: wrap; }
-        .post-meta span { display: flex; align-items: center; gap: 4px; }
+
+        /* Post Meta — professional labels */
+        .post-meta { font-size: 0.82rem; color: #8A9BA8; margin-bottom: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #F4FAEC;
+            color: #3A6A1A;
+            padding: 3px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
 
         article h2 { font-size: 1.35rem; color: #073E61; margin: 32px 0 12px; font-weight: 700; }
         article p { margin-bottom: 16px; color: #333; }
@@ -72,83 +85,180 @@
         article ul li { margin-bottom: 8px; color: #444; }
         article ul li strong { color: #1C2D3A; }
 
+        /* Highlight Box */
         .highlight-box {
             background: #F4FAEC;
+            border: 1px solid #DCE8CC;
             border-left: 4px solid #A5D549;
             padding: 20px 24px;
-            border-radius: 0 10px 10px 0;
+            border-radius: 10px;
             margin: 24px 0;
         }
-        .highlight-box h4 { color: #073E61; margin-bottom: 8px; }
+        .highlight-box h4 { color: #073E61; margin-bottom: 8px; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .highlight-box p { margin-bottom: 0; }
 
+        /* Tip Box */
         .tip-box {
             background: #F5F9FF;
+            border: 1px solid #D0DFF0;
             border-left: 4px solid #2563EB;
             padding: 20px 24px;
-            border-radius: 0 10px 10px 0;
+            border-radius: 10px;
             margin: 24px 0;
         }
-        .tip-box h4 { color: #073E61; margin-bottom: 6px; }
+        .tip-box h4 { color: #073E61; margin-bottom: 6px; font-size: 0.92rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .tip-box p { margin-bottom: 0; }
 
+        /* Skill Cards */
         .skill-card {
             background: #FAFBFC;
             border: 1px solid #E8EEF8;
             border-radius: 12px;
             padding: 20px 24px;
             margin-bottom: 18px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
         }
-        .skill-card h3 { font-size: 1.05rem; color: #073E61; margin-bottom: 6px; }
-        .skill-card p { margin-bottom: 0; font-size: 0.92rem; }
-        .skill-card .skill-tag {
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+            background: #F4FAEC;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #5A8A2A;
+            font-weight: 800;
+            font-size: 1rem;
+        }
+        .skill-content { flex: 1; }
+        .skill-content h3 { font-size: 1.05rem; color: #073E61; margin-bottom: 6px; }
+        .skill-content p { margin-bottom: 0; font-size: 0.92rem; }
+        .skill-tag {
             display: inline-block;
             background: #A5D549;
             color: #1C2D3A;
-            font-size: 0.72rem;
-            font-weight: 600;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             padding: 2px 10px;
             border-radius: 20px;
             margin-bottom: 8px;
         }
 
+        /* Infographic: Skill Level Meter */
+        .skill-meter-wrap { margin: 24px 0; }
+        .skill-meter-title { font-weight: 700; color: #073E61; margin-bottom: 12px; font-size: 1rem; }
+        .skill-meter { margin-bottom: 12px; }
+        .skill-meter .meter-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
+        .meter-bar { height: 8px; background: #E8EEF8; border-radius: 4px; overflow: hidden; }
+        .meter-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #A5D549, #7DB94D); }
+
         /* CTA */
         .cta-blog {
-            background: #073E61;
+            background: linear-gradient(135deg, #073E61 0%, #0A5A8A 100%);
             color: #ffffff;
-            padding: 32px;
+            padding: 40px 32px;
             border-radius: 16px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 48px;
+            position: relative;
+            overflow: hidden;
         }
-        .cta-blog h3 { font-size: 1.2rem; margin-bottom: 8px; }
-        .cta-blog p { color: #B0C9DA; margin-bottom: 20px; font-size: 0.92rem; }
+        .cta-blog::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(165, 213, 73, 0.06);
+            border-radius: 50%;
+        }
+        .cta-blog h3 { font-size: 1.35rem; margin-bottom: 8px; position: relative; }
+        .cta-blog p { color: #B0C9DA; margin-bottom: 24px; font-size: 0.92rem; position: relative; }
         .cta-blog .btn-primary {
             display: inline-block;
             background: #A5D549;
             color: #1C2D3A;
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 16px 36px;
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.88rem;
-            transition: background 0.2s;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.25s;
             margin-right: 10px;
+            position: relative;
         }
-        .cta-blog .btn-primary:hover { background: #95c73e; }
+        .cta-blog .btn-primary:hover { background: #95c73e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(165, 213, 73, 0.4); }
         .cta-blog .btn-outline {
             display: inline-block;
             background: transparent;
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 28px;
+            padding: 14px 30px;
             border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.88rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             border: 2px solid rgba(255,255,255,0.3);
-            transition: border-color 0.2s;
+            transition: all 0.2s;
+            position: relative;
         }
-        .cta-blog .btn-outline:hover { border-color: #ffffff; }
+        .cta-blog .btn-outline:hover { border-color: #ffffff; background: rgba(255,255,255,0.1); }
+
+        /* Infographic Stats */
+        .infographic-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 28px 0;
+        }
+        .stat-item {
+            background: #F4FAEC;
+            border-radius: 12px;
+            padding: 20px 12px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #073E61;
+            line-height: 1.1;
+        }
+        .stat-label {
+            font-size: 0.72rem;
+            color: #666;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* Why BTW Infographic */
+        .why-list-icons { margin: 24px 0; }
+        .why-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        .why-item .wi-icon {
+            width: 38px;
+            height: 38px;
+            background: #F4FAEC;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #5A8A2A;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+        .why-item .wi-text { font-size: 0.92rem; color: #333; padding-top: 8px; }
+        .why-item .wi-text strong { color: #1C2D3A; }
 
         /* Footer */
         .blog-footer {
@@ -167,6 +277,9 @@
             article h2 { font-size: 1.15rem; }
             .blog-nav { flex-direction: column; text-align: center; }
             .cta-blog .btn-primary, .cta-blog .btn-outline { display: block; margin: 10px 0; }
+            .skill-card { flex-direction: column; }
+            .infographic-stats { grid-template-columns: repeat(2, 1fr); }
+            .why-list-icons { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -196,11 +309,11 @@
 
             <h1>Top Skills Every Fresher Should Learn Before Applying</h1>
 
-            <div class="post-meta">
-                <span>&#128197; June 30, 2026</span>
-                <span>&#128100; BTW Group HR Team</span>
-                <span>&#128218; Career Advice</span>
-            </div>
+        <div class="post-meta">
+            <span class="meta-label">Updated 1 July 2026</span>
+            <span class="meta-label">BTW Group HR Team</span>
+            <span class="meta-label">5 min read</span>
+        </div>
 
             <p>
                 Starting your first job search is exciting&mdash;and a little nerve-wracking. As a fresher, you might wonder: <em>"Am I ready? Do I have the right skills? What do employers actually look for?"</em>
@@ -211,7 +324,7 @@
             </p>
 
             <div class="highlight-box">
-                <h4>&#128161; Quick Take</h4>
+                <h4>Key Insight</h4>
                 <p>Employers value <strong>communication, MS Office proficiency, problem-solving, and a professional attitude</strong> above all else. These skills are trainable and completely within your reach.</p>
             </div>
 
@@ -221,19 +334,25 @@
             </p>
 
             <div class="skill-card">
-                <span class="skill-tag">Essential</span>
-                <h3>Verbal Communication</h3>
-                <p>Practice speaking clearly and confidently. Record yourself answering common interview questions. Join a public speaking group or simply converse more in English if it is not your first language. Clarity matters more than accent.</p>
+                <div class="skill-icon">VC</div>
+                <div class="skill-content">
+                    <span class="skill-tag">Essential</span>
+                    <h3>Verbal Communication</h3>
+                    <p>Practice speaking clearly and confidently. Record yourself answering common interview questions. Join a public speaking group or simply converse more in English if it is not your first language. Clarity matters more than accent.</p>
+                </div>
             </div>
 
             <div class="skill-card">
-                <span class="skill-tag">Essential</span>
-                <h3>Written Communication</h3>
-                <p>Learn to write professional emails with proper greetings, clear subject lines, and a polite closing. Avoid slang and emojis in professional correspondence. Tools like Grammarly can help you spot errors and improve your writing.</p>
+                <div class="skill-icon">WC</div>
+                <div class="skill-content">
+                    <span class="skill-tag">Essential</span>
+                    <h3>Written Communication</h3>
+                    <p>Learn to write professional emails with proper greetings, clear subject lines, and a polite closing. Avoid slang and emojis in professional correspondence. Tools like Grammarly can help you spot errors and improve your writing.</p>
+                </div>
             </div>
 
             <div class="tip-box">
-                <h4>&#128161; Pro Tip</h4>
+                <h4>Pro Tip</h4>
                 <p>During interviews, listen carefully before answering. A thoughtful pause is better than a rushed response. Employers notice candidates who communicate with intention.</p>
             </div>
 
@@ -247,6 +366,27 @@
                 <li><strong>MS Word:</strong> Master formatting, tables of contents, headers/footers, and mail merge.</li>
             </ul>
             <p>YouTube tutorials and free courses on platforms like Coursera and LinkedIn Learning can get you up to speed in a few weeks.</p>
+
+            <!-- Infographic: Skill Level Meter -->
+            <div class="skill-meter-wrap">
+                <div class="skill-meter-title">How Freshers Typically Score Before &amp; After Training</div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Communication Skills</span><span>70%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:70%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>MS Office Proficiency</span><span>65%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:65%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Digital Literacy</span><span>80%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:80%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Problem-Solving</span><span>55%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:55%"></div></div>
+                </div>
+            </div>
 
             <h2>3. Basic Digital Literacy</h2>
             <p>
@@ -270,7 +410,7 @@
                 <li>Learn to explain your reasoning out loud</li>
             </ul>
             <div class="highlight-box">
-                <h4>&#128161; Real-World Example</h4>
+                <h4>Real-World Example</h4>
                 <p>A customer calls frustrated about a visa delay. Instead of panicking, a good fresher would: listen without interrupting, note the application number, check the status, explain the next step clearly, and follow up. This is problem-solving in action.</p>
             </div>
 
@@ -318,7 +458,7 @@
             </ul>
 
             <div class="tip-box">
-                <h4>&#128161; Pro Tip</h4>
+                <h4>Pro Tip</h4>
                 <p>Customize your resume for each role. If you are applying for a visa executive position, highlight communication and organizational skills. For a sales role, emphasize persuasion and numerical confidence.</p>
             </div>
 
@@ -326,15 +466,47 @@
             <p>
                 At BTW Group, we do not expect you to know everything on day one. That is why every fresher goes through a structured onboarding and training program. You will learn:
             </p>
-            <ul>
-                <li>Visa and travel industry fundamentals</li>
-                <li>Company software and tools</li>
-                <li>Customer service standards and protocols</li>
-                <li>Role-specific skills from experienced mentors</li>
-            </ul>
+            <div class="why-list-icons">
+                <div class="why-item">
+                    <div class="wi-icon">01</div>
+                    <div class="wi-text"><strong>Visa &amp; Travel Fundamentals</strong> &mdash; Industry knowledge from day one</div>
+                </div>
+                <div class="why-item">
+                    <div class="wi-icon">02</div>
+                    <div class="wi-text"><strong>Company Software &amp; Tools</strong> &mdash; Hands-on training with our systems</div>
+                </div>
+                <div class="why-item">
+                    <div class="wi-icon">03</div>
+                    <div class="wi-text"><strong>Customer Service Standards</strong> &mdash; Professional protocols and best practices</div>
+                </div>
+                <div class="why-item">
+                    <div class="wi-icon">04</div>
+                    <div class="wi-text"><strong>Mentorship from Experienced Leaders</strong> &mdash; Role-specific skills from the best</div>
+                </div>
+            </div>
             <p>
                 We hire for <strong>attitude and potential</strong>, then invest in your growth. Many of our team leaders and managers started as freshers themselves.
             </p>
+
+            <!-- Infographic: Hiring Stats -->
+            <div class="infographic-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Open Positions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">On-the-Job Training</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Weeks Structured Onboarding</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Years Experience Required</div>
+                </div>
+            </div>
 
             <h2>FAQs</h2>
 
@@ -350,13 +522,13 @@
             <h3>Can I apply without knowing all these skills?</h3>
             <p>Absolutely. These are guidelines to help you prepare, not a checklist you must complete before applying. If you have a positive attitude and a willingness to learn, we encourage you to apply.</p>
 
-            <!-- CTA -->
-            <div class="cta-blog">
-                <h3>Ready to Start Your Career?</h3>
-                <p>BTW Group is hiring freshers across multiple roles in Mumbai and Thane. Browse our current openings and submit your application today.</p>
-                <a href="../../#openings" class="btn-primary">View All Openings</a>
-                <a href="mailto:hr@btwvisas.com" class="btn-outline">Email Your Resume</a>
-            </div>
+        <!-- CTA -->
+        <div class="cta-blog">
+            <h3>Apply Now &mdash; Freshers Welcome</h3>
+            <p>No experience required. Full training provided. Take the first step toward your career at BTW Group today.</p>
+            <a href="https://www.btwgroup.co/apply-now" class="btn-primary">Apply Now &rarr;</a>
+            <a href="../../#openings" class="btn-outline">View Openings</a>
+        </div>
 
         </article>
 

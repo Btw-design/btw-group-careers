@@ -34,10 +34,18 @@
     <meta property="og:site_name" content="BTW Group Careers">
     <meta property="og:locale" content="en_IN">
 
+    <!-- Open Graph Image -->
+    <meta property="og:image" content="https://careers.btwgroup.co/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="BTW Group Careers - Build Your Career with Us">
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="BTW Group Careers 2026 | Jobs in Mumbai | Apply Online">
     <meta name="twitter:description" content="Explore careers at BTW Group. Apply for visa, travel, sales, accounts & corporate jobs in Mumbai.">
+    <meta name="twitter:image" content="https://careers.btwgroup.co/og-image.png">
+    <meta name="twitter:site" content="@btwgroup">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,12 +61,22 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@id": "https://www.btwgroup.co/#organization",
         "@type": "Organization",
         "name": "BTW Group",
         "url": "https://www.btwgroup.co",
-        "logo": "https://www.btwgroup.co/logo.png",
-        "description": "BTW Group is a diversified organization offering services in visas, travel, financial solutions, translations, and more. Founded in Pune with over 15 years of experience, we are committed to customer satisfaction and professional excellence.",
+        "logo": "https://careers.btwgroup.co/favicon.svg",
+        "description": "BTW Group is a diversified organization offering services in visas, travel, financial solutions, translations, and more. With over 15 years of experience and offices in Mumbai, we are committed to customer satisfaction and professional excellence.",
         "foundingDate": "2008",
+        "foundingLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+            }
+        },
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Mumbai",
@@ -67,14 +85,21 @@
         },
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+91-22-XXXXXXXX",
+            "telephone": "+91-22-69814000",
             "contactType": "HR",
-            "availableLanguage": ["English", "Hindi"]
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi", "Marathi"]
         },
         "sameAs": [
             "https://www.linkedin.com/company/btwgroup",
-            "https://www.facebook.com/btwgroup"
-        ]
+            "https://www.facebook.com/btwgroup",
+            "https://www.btwgroup.co"
+        ],
+        "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "minValue": 100,
+            "maxValue": 500
+        }
     }
     </script>
 
@@ -82,9 +107,10 @@
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://careers.btwgroup.co/#breadcrumb",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.btwgroup.co" },
-            { "@type": "ListItem", "position": 2, "name": "Careers", "item": "https://careers.btwgroup.co" }
+            { "@type": "ListItem", "position": 2, "name": "Careers", "item": "https://careers.btwgroup.co/" }
         ]
     }
     </script>
@@ -93,6 +119,7 @@
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://careers.btwgroup.co/#faq",
         "mainEntity": [
             {
                 "@type": "Question",
@@ -139,7 +166,7 @@
                 "name": "What are the experience requirements for jobs at BTW Group?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We have openings for both freshers (0 years experience) and experienced professionals (1-5+ years). Entry-level roles are ideal for freshers, while senior roles may require relevant industry experience."
+                    "text": "We are currently hiring only freshers for all open positions. No prior experience is required — we provide comprehensive training to help you succeed. If you are passionate and eager to learn, BTW Group is the perfect place to start your career."
                 }
             },
             {
@@ -147,7 +174,7 @@
                 "name": "What employee benefits does BTW Group offer?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "BTW Group offers competitive salaries, health benefits, career growth opportunities, regular training programs, performance rewards, and learning opportunities."
+                    "text": "BTW Group offers competitive salaries, health benefits, career growth opportunities, regular training programs, performance rewards, a professional work environment, and learning opportunities."
                 }
             },
             {
@@ -198,145 +225,303 @@
     [{
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-visa-submission-executive",
         "title": "Visa Submission Executive",
-        "description": "Review and validate visa applications, coordinate with embassies, track submissions, and ensure document compliance. Full-time role at BTW Visa Services in Thane, Mumbai.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-VSE-2026", "value": "BTW-VSE-2026" },
+        "description": "Review and validate visa applications, coordinate with embassies, track submissions, and ensure document compliance. Full-time fresher role at BTW Visa Services in Thane, Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "Fresher / 0-1 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 18000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Travel and Visa Services",
+        "occupationalCategory": "43-4061.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Visa documentation, Communication, Attention to detail, MS Office, Organization",
+        "qualifications": "Graduate in any discipline. Strong attention to detail and basic computer proficiency.",
+        "responsibilities": "Review visa applications for completeness. Coordinate with embassies and consulates. Track application status and follow up. Ensure document compliance with guidelines. Maintain records and reports.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-coordinator-translation",
         "title": "Coordinator – Translation Services",
-        "description": "Coordinate and manage translation projects, assign tasks to linguists, track timelines, and ensure quality deliverables for attestation, apostille, and document translation services.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-CTS-2026", "value": "BTW-CTS-2026" },
+        "description": "Coordinate and manage translation projects, assign tasks to linguists, track timelines, and ensure quality deliverables for attestation, apostille, and document translation services at BTW Group, Thane.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "1-3 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 18000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Translation and Localization",
+        "occupationalCategory": "27-3091.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Project coordination, Communication, Time management, MS Office, Bilingual proficiency",
+        "qualifications": "Graduate in any discipline. Strong organizational and communication skills. Bilingual proficiency is a plus.",
+        "responsibilities": "Manage translation project workflows. Assign tasks to linguists and translators. Track project timelines and ensure deadlines are met. Review quality of deliverables. Communicate with clients and internal teams.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-csr-executive",
         "title": "CSR Executive",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-CSR-2026", "value": "BTW-CSR-2026" },
         "description": "Handle incoming calls, greet visitors, manage inquiries, and provide professional front desk and customer service support at BTW Visa Services in Thane.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "0-2 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 18000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Customer Service",
+        "occupationalCategory": "43-4051.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Customer service, Communication, Phone etiquette, MS Office, Problem-solving",
+        "qualifications": "Graduate in any discipline. Excellent verbal communication skills. Customer-centric attitude.",
+        "responsibilities": "Handle incoming calls and route to appropriate departments. Greet and assist visitors at the front desk. Manage inquiries via phone, email, and in person. Maintain visitor logs and records. Provide administrative support to the team.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-executive-consultation-pec",
         "title": "Executive (Consultation) – PEC",
-        "description": "Provide expert consultation on attestation, apostille, and translation services. Guide clients through documentation and process requirements at BTW Group.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-ECP-2026", "value": "BTW-ECP-2026" },
+        "description": "Provide expert consultation on attestation, apostille, and translation services. Guide clients through documentation and process requirements at BTW Group in Thane.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "1-3 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 18000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Visa and Immigration Services",
+        "occupationalCategory": "13-1199.07",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Consultation, Documentation, Client management, Communication, MS Office",
+        "qualifications": "Graduate in any discipline. Strong knowledge of attestation and apostille processes is a plus.",
+        "responsibilities": "Consult with clients on attestation and apostille requirements. Guide clients through documentation processes. Explain MEA, HRD, and embassy guidelines. Coordinate with internal teams for case processing. Maintain client records and case status updates.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-executive-documentation-pec",
         "title": "Executive (Documentation) – PEC",
-        "description": "Handle end-to-end attestation and apostille case documentation, ensure compliance with MEA, HRD, and embassy guidelines at BTW Group.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-EDP-2026", "value": "BTW-EDP-2026" },
+        "description": "Handle end-to-end attestation and apostille case documentation, ensure compliance with MEA, HRD, and embassy guidelines at BTW Group in Thane.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "validThrough": "2026-08-30",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
         "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Office no 702, Pranav Building, Gaondevi Road, Opp Gaondevi Bus Depot", "addressLocality": "Thane", "addressRegion": "Maharashtra", "postalCode": "400602", "addressCountry": "IN" } },
-        "employmentType": "FULL_TIME",
-        "experienceRequirements": "0-2 years",
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 18000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Visa and Immigration Services",
+        "occupationalCategory": "43-9111.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Documentation, Compliance, Data entry, MS Office, Attention to detail",
+        "qualifications": "Graduate in any discipline. High attention to detail and organizational skills.",
+        "responsibilities": "Prepare and process attestation and apostille documentation. Ensure compliance with MEA, HRD, and embassy guidelines. Track case progress and update records. Coordinate with government authorities when required. Maintain document archives.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-corporate-lead-generation",
         "title": "Corporate Lead Generation Executive",
-        "description": "Identify and generate corporate leads through research and outreach. Build prospect pipelines and support B2B sales growth across visa, travel, and immigration services.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-CLG-2026", "value": "BTW-CLG-2026" },
+        "description": "Identify and generate corporate leads through research and outreach. Build prospect pipelines and support B2B sales growth across visa, travel, and immigration services for BTW Group.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "1-3 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 20000, "maxValue": 23000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Business Development and Sales",
+        "occupationalCategory": "41-3091.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Lead generation, Sales research, Communication, CRM, MS Office, B2B outreach",
+        "qualifications": "Graduate in any discipline. Strong research and communication skills. Sales aptitude is preferred.",
+        "responsibilities": "Research and identify corporate prospects. Generate qualified leads through calls and emails. Build and maintain prospect pipelines in CRM. Support B2B sales initiatives. Prepare lead reports and forecasts.",
+        "jobBenefits": "Competitive salary, Performance incentives, On-the-job training, Career growth opportunities",
+        "incentiveCompensation": "Performance-based incentives on lead conversion"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-accounts-qc-executive",
         "title": "Accounts & Quality Control Executive",
-        "description": "Manage accounts, invoicing, payment tracking and vendor payments while monitoring visa processing quality and service timelines at BTW Group.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-AQC-2026", "value": "BTW-AQC-2026" },
+        "description": "Manage accounts, invoicing, payment tracking and vendor payments while monitoring visa processing quality and service timelines at BTW Group in Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "2-4 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 18000, "maxValue": 22000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Accounting and Quality Assurance",
+        "occupationalCategory": "13-2011.02",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Accounting, MS Excel, Attention to detail, Data analysis, Invoicing",
+        "qualifications": "Graduate in Commerce or related field. Basic accounting knowledge preferred.",
+        "responsibilities": "Manage accounts payable and receivable. Process invoices, track payments, and reconcile statements. Monitor visa processing quality and timelines. Prepare quality reports. Coordinate with vendors and internal departments.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-insurance-executive",
         "title": "Insurance Executive",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-INS-2026", "value": "BTW-INS-2026" },
         "description": "Generate insurance client leads, sell motor, health, and travel insurance policies, and build customer relationships for BTW Group in Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "1-3 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Insurance Services",
+        "occupationalCategory": "41-3021.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Insurance sales, Communication, Client relationship, Negotiation, MS Office",
+        "qualifications": "Graduate in any discipline. Knowledge of insurance products is a plus.",
+        "responsibilities": "Generate leads for motor, health, and travel insurance. Explain policy details to clients. Process insurance applications and documentation. Build and maintain client relationships. Achieve monthly sales targets.",
+        "jobBenefits": "Competitive salary, Performance incentives, On-the-job training, Career growth opportunities",
+        "incentiveCompensation": "Commission on insurance policies sold"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-visa-executive",
         "title": "Visa Executive",
-        "description": "Consult with clients on visa requirements, process applications, provide end-to-end support, and deliver excellent customer service throughout the visa lifecycle.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-VE-2026", "value": "BTW-VE-2026" },
+        "description": "Consult with clients on visa requirements, process applications, provide end-to-end support, and deliver excellent customer service throughout the visa lifecycle at BTW Group in Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "0-2 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Visa and Immigration Services",
+        "occupationalCategory": "43-4061.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Visa processing, Client consultation, Documentation, Communication, MS Office",
+        "qualifications": "Graduate in any discipline. Knowledge of visa categories and requirements is a plus.",
+        "responsibilities": "Consult with clients on visa requirements and procedures. Review and process visa applications. Coordinate with embassies and consulates. Track application status and provide updates. Ensure exceptional customer service throughout the process.",
+        "jobBenefits": "Competitive salary, On-the-job training, Career growth opportunities, Performance rewards, Professional work environment"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-business-development-executive",
         "title": "Business Development Executive",
-        "description": "Acquire new corporate clients, generate B2B opportunities, and drive revenue growth across visa, travel, and immigration services for BTW Group.",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-BDE-2026", "value": "BTW-BDE-2026" },
+        "description": "Acquire new corporate clients, generate B2B opportunities, and drive revenue growth across visa, travel, and immigration services for BTW Group in Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "2-5 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Business Development",
+        "occupationalCategory": "11-2022.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "B2B sales, Client acquisition, Negotiation, Communication, MS Office, CRM",
+        "qualifications": "Graduate in any discipline. Strong interpersonal and negotiation skills.",
+        "responsibilities": "Identify and acquire new corporate clients. Generate B2B opportunities through outreach and networking. Present visa, travel, and immigration solutions. Negotiate contracts and close deals. Achieve revenue targets.",
+        "jobBenefits": "Competitive salary, Performance incentives, On-the-job training, Career growth opportunities",
+        "incentiveCompensation": "Commission on new client acquisition"
     },
     {
         "@context": "https://schema.org",
         "@type": "JobPosting",
+        "@id": "https://careers.btwgroup.co/#job-air-ticketing-sales-executive",
         "title": "Air Ticketing Sales Executive",
+        "identifier": { "@type": "PropertyValue", "name": "BTW-ATSE-2026", "value": "BTW-ATSE-2026" },
         "description": "Promote airline ticketing services, generate bookings through calls and emails, and provide competitive travel solutions to customers in Mumbai.",
         "datePosted": "2026-06-30",
-        "hiringOrganization": { "@type": "Organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "validThrough": "2026-08-30",
         "employmentType": "FULL_TIME",
-        "experienceRequirements": "1-3 years",
+        "hiringOrganization": { "@type": "Organization", "@id": "https://www.btwgroup.co/#organization", "name": "BTW Group", "sameAs": "https://www.btwgroup.co" },
+        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } },
+        "applicantLocationRequirements": { "@type": "Country", "name": "IN" },
+        "jobLocationType": "TELECOMMUTE",
         "baseSalary": { "@type": "MonetaryAmount", "currency": "INR", "value": { "@type": "QuantitativeValue", "minValue": 15000, "maxValue": 20000, "unitText": "MONTH" } },
-        "validThrough": "2026-08-30"
+        "directApply": true,
+        "url": "https://www.btwgroup.co/apply-now",
+        "industry": "Travel and Tourism",
+        "occupationalCategory": "41-3041.00",
+        "workHours": "9:30 AM – 6:30 PM (Monday–Saturday)",
+        "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+        "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "bachelor degree" },
+        "skills": "Air ticketing, Sales, Customer service, Communication, GDS knowledge (preferred)",
+        "qualifications": "Graduate in any discipline. Knowledge of airline ticketing is a plus.",
+        "responsibilities": "Promote and sell airline ticketing services. Handle booking inquiries via calls and emails. Provide competitive travel solutions to customers. Process ticket bookings and cancellations. Build customer relationships for repeat business.",
+        "jobBenefits": "Competitive salary, Performance incentives, On-the-job training, Career growth opportunities",
+        "incentiveCompensation": "Commission on ticket bookings"
     }]
     </script>
 
