@@ -807,6 +807,13 @@ section.alt-bg {
     text-align: center;
     font-size: 0.82rem;
 }
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 14px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.footer-logo:hover { opacity: 1; }
 .footer a { color: #8A9BA8; transition: color 0.2s; }
 .footer a:hover { color: #ffffff; }
 .footer-links { margin-bottom: 8px; }
