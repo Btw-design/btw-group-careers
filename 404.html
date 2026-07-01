@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | BTW Group Careers</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://careers.btwgroup.co/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FAFBFC;
+            color: #1C2D3A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 24px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 480px; }
+        .code { font-size: 5rem; font-weight: 800; color: #073E61; line-height: 1; margin-bottom: 8px; }
+        .code span { color: #A5D549; }
+        h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; color: #073E61; }
+        p { color: #666; font-size: 0.92rem; margin-bottom: 28px; line-height: 1.6; }
+        .btn {
+            display: inline-block;
+            background: #073E61;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #0A5A8A; }
+        .btn-green {
+            background: #A5D549;
+            color: #1C2D3A;
+        }
+        .btn-green:hover { background: #95c73e; }
+        .links { margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* Redirecting message (shown briefly) */
+        .redirect-msg {
+            background: #F4FAEC;
+            border: 1px solid #A5D549;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: #3A6A1A;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="code">4<span>0</span>4</div>
+        <h1>Page Not Found</h1>
+        <p>The page you are looking for does not exist or has been moved.<br>Let us get you back on track.</p>
+        <div class="links">
+            <a href="https://careers.btwgroup.co/" class="btn">Home</a>
+            <a href="https://careers.btwgroup.co/blog/" class="btn btn-green">Blog</a>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // 301 Redirect Logic for old .html and index.html URLs
+        // ============================================================
+        // This preserves SEO value when external sites or search
+        // engines reference the old extension-based URLs.
+        // ============================================================
+
+        (function() {
+            var path = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+
+            function redirectTo(url) {
+                // Preserve query string and hash fragment
+                window.location.replace(url + search + hash);
+            }
+
+            // Case 1: Ends with .html  → strip it and redirect
+            //   e.g. /blog/post.html → /blog/post/
+            if (path.match(/\.html$/i)) {
+                var clean = path.replace(/\.html$/i, '');
+                // Ensure trailing slash for sub-pages (but not for root)
+                if (clean !== '' && !clean.endsWith('/')) {
+                    clean += '/';
+                }
+                redirectTo(clean);
+                return;
+            }
+
+            // Case 2: Ends with index.html  → strip it
+            //   e.g. /blog/index.html → /blog/  or  /index.html → /
+            if (path.match(/index\.html$/i)) {
+                var clean = path.replace(/\/?index\.html$/i, '') || '/';
+                if (clean !== '/' && !clean.endsWith('/')) {
+                    clean += '/';
+                }
+                redirectTo(clean);
+                return;
+            }
+
+            // Case 3: No trailing slash on a non-root path → add it
+            //   e.g. /blog/post → /blog/post/
+            if (path !== '/' && !path.endsWith('/') && !path.match(/\.[a-zA-Z]{2,5}$/)) {
+                redirectTo(path + '/');
+                return;
+            }
+        })();
+    </script>
+</body>
+</html>
