@@ -1,4 +1,17 @@
+# ==========================================
+#  robots.txt  -  BTW Group Careers
+#  https://careers.btwgroup.co/
+# ==========================================
+
+# Allow all well-behaved bots full access
 User-agent: *
 Allow: /
+
+# Crawl-behaviour hints
+Crawl-delay: 10
+
+# ==========================================
+#  Sitemaps
+# ==========================================
 
 Sitemap: https://careers.btwgroup.co/sitemap.xml
