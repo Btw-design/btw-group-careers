@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Skills Every Fresher Should Learn Before Applying | BTW Group Careers Blog</title>
-    <meta name="description" content="Discover the top skills freshers need before applying for jobs in 2026. Communication, MS Office, teamwork and more tips from BTW Group.">
-    <meta name="keywords" content="Skills for freshers, Fresher jobs, Job skills 2026, Communication skills, MS Office, BTW Group, Career tips, Interview tips freshers">
+    <title>Top 5 Skills Every Fresher Should Learn in 2026 | BTW Group Careers Blog</title>
+    <meta name="description" content="Discover the top 5 skills every fresher needs to learn in 2026 — communication, AI literacy, problem-solving, and more. Practical tips from BTW Group HR team.">
+    <meta name="keywords" content="Top 5 skills freshers 2026, Fresher job skills India, Communication skills, AI literacy, MS Office, Problem-solving, BTW Group, Career tips 2026, Interview tips freshers">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://careers.btwgroup.co/blog/top-skills-every-fresher-should-learn/">
     <link rel="icon" type="image/png" href="../../favicon.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Top Skills Every Fresher Should Learn Before Applying | BTW Group Careers Blog">
-    <meta property="og:description" content="Discover the top skills freshers need before applying for jobs in 2026. Communication, MS Office, teamwork and more tips from BTW Group.">
+    <meta property="og:title" content="Top 5 Skills Every Fresher Should Learn in 2026 | BTW Group Careers Blog">
+    <meta property="og:description" content="Discover the top 5 skills every fresher needs to learn in 2026 — communication, AI literacy, problem-solving, and more. Practical tips from BTW Group HR team.">
     <meta property="og:url" content="https://careers.btwgroup.co/blog/top-skills-every-fresher-should-learn/">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="BTW Group Careers">
@@ -81,10 +81,60 @@
         }
 
         article h2 { font-size: 1.35rem; color: #073E61; margin: 32px 0 12px; font-weight: 700; }
+        article h3 { font-size: 1.05rem; color: #073E61; margin: 20px 0 8px; font-weight: 600; }
         article p { margin-bottom: 16px; color: #333; }
         article ul { margin: 0 0 16px 22px; }
         article ul li { margin-bottom: 8px; color: #444; }
         article ul li strong { color: #1C2D3A; }
+        article ol { margin: 0 0 16px 22px; }
+        article ol li { margin-bottom: 8px; color: #444; }
+
+        /* Hero Banner */
+        .blog-hero-img {
+            background: linear-gradient(135deg, #073E61 0%, #0A5A8A 100%);
+            border-radius: 16px;
+            padding: 40px 32px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .blog-hero-img::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(165, 213, 73, 0.06);
+            border-radius: 50%;
+        }
+        .blog-hero-img::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(165, 213, 73, 0.04);
+            border-radius: 50%;
+        }
+        .hero-accent-1, .hero-accent-2 { display: none; }
+        .hero-content { position: relative; }
+        .hero-badge {
+            display: inline-block;
+            background: #A5D549;
+            color: #1C2D3A;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .hero-title { font-size: 1.6rem; color: #ffffff; font-weight: 700; margin-bottom: 8px; }
+        .hero-sub { font-size: 0.95rem; color: #B0C9DA; }
 
         /* Highlight Box */
         .highlight-box {
@@ -237,6 +287,30 @@
             letter-spacing: 0.8px;
         }
 
+        /* List icons */
+        .list-icons { margin: 20px 0; }
+        .list-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 14px;
+        }
+        .list-item .li-icon {
+            width: 34px;
+            height: 34px;
+            background: #F4FAEC;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #5A8A2A;
+            font-weight: 800;
+            font-size: 0.8rem;
+        }
+        .list-item .li-text { font-size: 0.92rem; color: #333; padding-top: 6px; }
+        .list-item .li-text strong { color: #1C2D3A; }
+
         /* Why BTW Infographic */
         .why-list-icons { margin: 24px 0; }
         .why-item {
@@ -261,6 +335,21 @@
         .why-item .wi-text { font-size: 0.92rem; color: #333; padding-top: 8px; }
         .why-item .wi-text strong { color: #1C2D3A; }
 
+        /* FAQ */
+        .faq-item {
+            border: 1px solid #E8EEF8;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .faq-item h3 {
+            font-size: 0.95rem;
+            color: #073E61;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .faq-item p { font-size: 0.88rem; margin-bottom: 0; }
+
         /* Footer */
         .blog-footer {
             text-align: center;
@@ -280,7 +369,6 @@
             .cta-blog .btn-primary, .cta-blog .btn-outline { display: block; margin: 10px 0; }
             .skill-card { flex-direction: column; }
             .infographic-stats { grid-template-columns: repeat(2, 1fr); }
-            .why-list-icons { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -303,35 +391,64 @@
         <div class="breadcrumb">
             <a href="../../">Home</a> &rsaquo;
             <a href="../">Blog</a> &rsaquo;
-            <span>Top Skills Every Fresher Should Learn Before Applying</span>
+            <span>Top 5 Skills Every Fresher Should Learn in 2026</span>
         </div>
 
         <article>
 
-            <h1>Top Skills Every Fresher Should Learn Before Applying</h1>
+            <h1>Top 5 Skills Every Fresher Should Learn in 2026</h1>
 
-        <div class="post-meta">
-            <span class="meta-label">Updated 1 July 2026</span>
-            <span class="meta-label">BTW Group HR Team</span>
-            <span class="meta-label">5 min read</span>
-        </div>
+            <div class="post-meta">
+                <span class="meta-label">Updated 2 July 2026</span>
+                <span class="meta-label">BTW Group HR Team</span>
+                <span class="meta-label">6 min read</span>
+            </div>
+
+            <!-- Hero Banner -->
+            <div class="blog-hero-img">
+                <div class="hero-content">
+                    <div class="hero-badge">2026 Guide</div>
+                    <div class="hero-title">Top 5 Skills for Freshers</div>
+                    <div class="hero-sub">What employers actually look for in 2026</div>
+                </div>
+            </div>
 
             <p>
-                Starting your first job search is exciting&mdash;and a little nerve-wracking. As a fresher, you might wonder: <em>"Am I ready? Do I have the right skills? What do employers actually look for?"</em>
+                Starting your job search as a fresher can feel overwhelming. You might wonder: <em>"Am I ready? Do employers expect me to know everything? What skills actually matter?"</em>
             </p>
 
             <p>
-                At <strong>BTW Group</strong>, we hire freshers across multiple roles every year&mdash;from visa executives to sales associates. Over time, we have noticed a clear pattern: candidates who invest in a few key skills before applying are far more likely to succeed. This article breaks down the top skills you should learn before you send out your next application.
+                At <strong>BTW Group</strong>, we hire freshers every year across visa services, sales, and travel coordination. After reviewing hundreds of applications and training dozens of new hires, we have identified the <strong>5 skills that matter most</strong> for freshers entering the job market in 2026.
             </p>
 
             <div class="highlight-box">
                 <h4>Key Insight</h4>
-                <p>Employers value <strong>communication, MS Office proficiency, problem-solving, and a professional attitude</strong> above all else. These skills are trainable and completely within your reach.</p>
+                <p>In 2026, employers do not expect you to have years of experience. They want <strong>strong communication, basic digital skills, a willingness to learn, and a professional attitude</strong>. These 5 skills will set you apart from the majority of applicants.</p>
             </div>
 
-            <h2>1. Professional Communication</h2>
+            <!-- Infographic: Why These 5 Skills Matter -->
+            <div class="infographic-stats">
+                <div class="stat-item">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Employers Prioritise Communication</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">Require MS Office / Google Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Value Problem-Solving Skills</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Years Experience Required</div>
+                </div>
+            </div>
+
+            <h2>1. Communication Skills — Verbal &amp; Written</h2>
             <p>
-                Communication tops almost every employer's wish list. Whether you are speaking with a customer, writing an email, or collaborating with a team, clear and confident communication sets you apart.
+                Communication is the single most important skill for any fresher. Every role at BTW Group &mdash; from visa executive to sales associate &mdash; requires clear, confident communication with clients, colleagues, and vendors.
             </p>
 
             <div class="skill-card">
@@ -339,7 +456,7 @@
                 <div class="skill-content">
                     <span class="skill-tag">Essential</span>
                     <h3>Verbal Communication</h3>
-                    <p>Practice speaking clearly and confidently. Record yourself answering common interview questions. Join a public speaking group or simply converse more in English if it is not your first language. Clarity matters more than accent.</p>
+                    <p>Speak clearly and confidently. You do not need a perfect accent &mdash; clarity matters more. Practice answering common interview questions out loud. Record yourself and listen back. If English is not your first language, converse in English daily to build fluency.</p>
                 </div>
             </div>
 
@@ -348,120 +465,156 @@
                 <div class="skill-content">
                     <span class="skill-tag">Essential</span>
                     <h3>Written Communication</h3>
-                    <p>Learn to write professional emails with proper greetings, clear subject lines, and a polite closing. Avoid slang and emojis in professional correspondence. Tools like Grammarly can help you spot errors and improve your writing.</p>
+                    <p>Write professional emails with proper greetings, clear subject lines, and a polite closing. Avoid slang and emojis in work emails. Tools like Grammarly can help you catch errors. This skill matters from day one &mdash; your first impression often comes through an email.</p>
                 </div>
             </div>
 
             <div class="tip-box">
                 <h4>Pro Tip</h4>
-                <p>During interviews, listen carefully before answering. A thoughtful pause is better than a rushed response. Employers notice candidates who communicate with intention.</p>
+                <p>During interviews, listen carefully before answering. A thoughtful pause is better than a rushed response. Employers notice candidates who communicate with intention, not just speed.</p>
             </div>
 
-            <h2>2. Microsoft Office (Especially Excel &amp; PowerPoint)</h2>
+            <h2>2. Digital Literacy &amp; Basic AI Awareness</h2>
             <p>
-                Most office jobs require basic computer skills, and Microsoft Office remains the industry standard. Even entry-level roles expect you to create documents, work with spreadsheets, and build simple presentations.
+                In 2026, digital literacy is no longer optional. Every office role requires familiarity with everyday digital tools. What has changed is that employers now also expect freshers to understand how AI tools fit into the workplace.
             </p>
-            <ul>
-                <li><strong>MS Excel:</strong> Learn basic formulas (SUM, AVERAGE, COUNT), data sorting, filtering, and creating tables. PivotTables are a big plus.</li>
-                <li><strong>MS PowerPoint:</strong> Know how to create clean, professional slides. Focus on structure and clarity rather than flashy animations.</li>
-                <li><strong>MS Word:</strong> Master formatting, tables of contents, headers/footers, and mail merge.</li>
-            </ul>
-            <p>YouTube tutorials and free courses on platforms like Coursera and LinkedIn Learning can get you up to speed in a few weeks.</p>
 
-            <!-- Infographic: Skill Level Meter -->
-            <div class="skill-meter-wrap">
-                <div class="skill-meter-title">How Freshers Typically Score Before &amp; After Training</div>
-                <div class="skill-meter">
-                    <div class="meter-label"><span>Communication Skills</span><span>70%</span></div>
-                    <div class="meter-bar"><div class="meter-fill" style="width:70%"></div></div>
-                </div>
-                <div class="skill-meter">
-                    <div class="meter-label"><span>MS Office Proficiency</span><span>65%</span></div>
-                    <div class="meter-bar"><div class="meter-fill" style="width:65%"></div></div>
-                </div>
-                <div class="skill-meter">
-                    <div class="meter-label"><span>Digital Literacy</span><span>80%</span></div>
-                    <div class="meter-bar"><div class="meter-fill" style="width:80%"></div></div>
-                </div>
-                <div class="skill-meter">
-                    <div class="meter-label"><span>Problem-Solving</span><span>55%</span></div>
-                    <div class="meter-bar"><div class="meter-fill" style="width:55%"></div></div>
+            <div class="skill-card">
+                <div class="skill-icon">DO</div>
+                <div class="skill-content">
+                    <span class="skill-tag">High Demand</span>
+                    <h3>MS Office &amp; Google Workspace</h3>
+                    <p>MS Excel, Word, and PowerPoint remain the industry standard. Learn basic formulas (SUM, AVERAGE, COUNT), data sorting, and PivotTables. Know how to use Google Drive, Sheets, and Docs for collaborative work. These are non-negotiable for entry-level roles.</p>
                 </div>
             </div>
 
-            <h2>3. Basic Digital Literacy</h2>
-            <p>
-                Beyond MS Office, employers appreciate familiarity with everyday digital tools:
-            </p>
+            <div class="skill-card">
+                <div class="skill-icon">AI</div>
+                <div class="skill-content">
+                    <span class="skill-tag">New for 2026</span>
+                    <h3>AI Tool Awareness</h3>
+                    <p>You do not need to be a programmer. But understanding how AI tools work &mdash; ChatGPT for drafting, Canva for visuals, Google Bard for research &mdash; shows employers you are adaptable. Mentioning AI familiarity on your resume can give you an edge in 2026.</p>
+                </div>
+            </div>
+
             <ul>
                 <li><strong>Email etiquette</strong> &ndash; managing inbox, using CC/BCC appropriately, attaching files correctly</li>
-                <li><strong>Google Workspace</strong> &ndash; Gmail, Google Drive, Google Docs, Google Sheets</li>
                 <li><strong>Video conferencing</strong> &ndash; Zoom, Google Meet, or Microsoft Teams basics (mute/unmute, screen share, chat)</li>
                 <li><strong>Typing speed</strong> &ndash; aim for at least 35&ndash;40 words per minute with accuracy</li>
             </ul>
 
-            <h2>4. Problem-Solving &amp; Critical Thinking</h2>
-            <p>
-                No one expects a fresher to have all the answers. But employers value candidates who can think through a problem logically and propose solutions.
-            </p>
-            <ul>
-                <li>Break large problems into smaller steps</li>
-                <li>Ask clarifying questions instead of guessing</li>
-                <li>Research before asking for help&mdash;show initiative</li>
-                <li>Learn to explain your reasoning out loud</li>
-            </ul>
-            <div class="highlight-box">
-                <h4>Real-World Example</h4>
-                <p>A customer calls frustrated about a visa delay. Instead of panicking, a good fresher would: listen without interrupting, note the application number, check the status, explain the next step clearly, and follow up. This is problem-solving in action.</p>
+            <!-- Skill Level Meter -->
+            <div class="skill-meter-wrap">
+                <div class="skill-meter-title">How These Skills Rank Among Employers in 2026</div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Communication Skills</span><span>92%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:92%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>MS Office / Google Workspace</span><span>87%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:87%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Problem-Solving &amp; Critical Thinking</span><span>78%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:78%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Adaptability &amp; Learning Attitude</span><span>85%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:85%"></div></div>
+                </div>
+                <div class="skill-meter">
+                    <div class="meter-label"><span>Attention to Detail</span><span>74%</span></div>
+                    <div class="meter-bar"><div class="meter-fill" style="width:74%"></div></div>
+                </div>
             </div>
 
-            <h2>5. Teamwork &amp; Interpersonal Skills</h2>
+            <h2>3. Problem-Solving &amp; Critical Thinking</h2>
             <p>
-                Every role at BTW Group involves collaboration. You will work with colleagues from different departments&mdash;operations, sales, accounts, and management. Being a team player means:
+                No one expects a fresher to have all the answers. But employers value candidates who can think through a problem logically and propose solutions &mdash; rather than giving up or guessing.
             </p>
-            <ul>
-                <li>Respecting others' time and opinions</li>
-                <li>Offering help when a teammate is overloaded</li>
-                <li>Receiving feedback without getting defensive</li>
-                <li>Contributing to team discussions, even if you are the junior-most member</li>
-            </ul>
 
-            <h2>6. Adaptability &amp; Willingness to Learn</h2>
-            <p>
-                The workplace changes fast&mdash;new software, new processes, new client requirements. Freshers who succeed are those who say <em>"I will learn"</em> instead of <em>"I don't know how."</em>
-            </p>
-            <ul>
-                <li>Show curiosity during interviews&mdash;ask about training and growth</li>
-                <li>Be open to feedback and course correction</li>
-                <li>Stay positive when faced with unfamiliar tasks</li>
-            </ul>
+            <div class="list-icons">
+                <div class="list-item">
+                    <div class="li-icon">01</div>
+                    <div class="li-text"><strong>Break large problems into smaller steps</strong> &mdash; tackle one piece at a time</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">02</div>
+                    <div class="li-text"><strong>Ask clarifying questions</strong> &mdash; instead of guessing, ask for more information</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">03</div>
+                    <div class="li-text"><strong>Research before asking for help</strong> &mdash; show initiative by looking for answers first</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">04</div>
+                    <div class="li-text"><strong>Explain your reasoning out loud</strong> &mdash; employers notice how you think, not just what you know</div>
+                </div>
+            </div>
 
-            <h2>7. Basic Financial &amp; Numerical Literacy</h2>
-            <p>
-                Roles like accounts executive, sales associate, and even visa executives require basic number work. You should be comfortable with:
-            </p>
-            <ul>
-                <li>Percentages, ratios, and basic arithmetic</li>
-                <li>Understanding invoices, receipts, and payment terms</li>
-                <li>Data entry with accuracy (attention to detail)</li>
-            </ul>
-            <p>A little practice with aptitude tests (free resources are available online) can go a long way.</p>
+            <div class="highlight-box">
+                <h4>Real-World Example</h4>
+                <p>A customer calls frustrated about a visa delay. Instead of panicking, a good fresher would: listen without interrupting, note the application number, check the status in the system, explain the next step clearly, and follow up within 24 hours. This is problem-solving in action.</p>
+            </div>
 
-            <h2>8. Personal Branding &amp; Interview Readiness</h2>
+            <h2>4. Adaptability &amp; Willingness to Learn</h2>
             <p>
-                Skills alone are not enough&mdash;you need to present them well. Before applying:
+                The workplace changes fast &mdash; new software, new processes, new client requirements. In 2026, with AI tools entering almost every industry, adaptability is more important than ever. Freshers who succeed are those who say <em>"I will learn"</em> instead of <em>"I don't know how."</em>
             </p>
-            <ul>
-                <li><strong>Update your resume:</strong> Keep it to one page. Highlight education, internships (if any), and skills. Use action verbs like "assisted," "managed," "created."</li>
-                <li><strong>Create a LinkedIn profile:</strong> Even a basic profile with a professional photo, headline, and summary helps recruiters find you.</li>
-                <li><strong>Practice common interview questions:</strong> "Tell me about yourself," "Why do you want to work here?", "What are your strengths and weaknesses?"</li>
-                <li><strong>Dress professionally</strong> for interviews&mdash;even if they are online.</li>
-            </ul>
+
+            <div class="list-icons">
+                <div class="list-item">
+                    <div class="li-icon">01</div>
+                    <div class="li-text"><strong>Show curiosity during interviews</strong> &mdash; ask about training programs and growth opportunities</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">02</div>
+                    <div class="li-text"><strong>Be open to feedback</strong> &mdash; receive constructive criticism without getting defensive</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">03</div>
+                    <div class="li-text"><strong>Stay positive with unfamiliar tasks</strong> &mdash; approach new challenges as learning opportunities</div>
+                </div>
+                <div class="list-item">
+                    <div class="li-icon">04</div>
+                    <div class="li-text"><strong>Learn basic AI tools on your own</strong> &mdash; free resources are available on YouTube and Coursera</div>
+                </div>
+            </div>
 
             <div class="tip-box">
                 <h4>Pro Tip</h4>
-                <p>Customize your resume for each role. If you are applying for a visa executive position, highlight communication and organizational skills. For a sales role, emphasize persuasion and numerical confidence.</p>
+                <p>When asked "Where do you see yourself in 5 years?" during an interview, talk about skills you want to develop, not just job titles. Employers love candidates who show a growth mindset.</p>
             </div>
+
+            <h2>5. Attention to Detail &amp; Professional Attitude</h2>
+            <p>
+                This skill separates good freshers from great ones. Whether it is checking a visa application for errors, proofreading an email before sending, or following up on a pending task &mdash; attention to detail builds trust with employers and clients.
+            </p>
+
+            <div class="skill-card">
+                <div class="skill-icon">AT</div>
+                <div class="skill-content">
+                    <span class="skill-tag">Essential</span>
+                    <h3>Accuracy in Documentation</h3>
+                    <p>Roles in visa processing, accounts, and sales all require careful data entry and document verification. A single mistake in a visa application can cause delays for the client. Double-check everything before submitting.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">PA</div>
+                <div class="skill-content">
+                    <span class="skill-tag">Essential</span>
+                    <h3>Professional Attitude</h3>
+                    <p>Punctuality, reliability, and a positive demeanor go a long way. Show up on time, meet deadlines, dress appropriately, and maintain a respectful tone with everyone. Many freshers underestimate how much attitude matters &mdash; it often decides who gets promoted first.</p>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Keep your resume to one page</strong> &mdash; highlight education, skills, and any internships or projects</li>
+                <li><strong>Create a LinkedIn profile</strong> &mdash; even a basic one helps recruiters find you</li>
+                <li><strong>Practice common interview questions</strong> &mdash; "Tell me about yourself," "Why this company?", "What are your strengths?"</li>
+                <li><strong>Dress professionally</strong> &mdash; even for video interviews</li>
+            </ul>
 
             <h2>How BTW Group Supports Freshers</h2>
             <p>
@@ -511,17 +664,30 @@
 
             <h2>FAQs</h2>
 
-            <h3>Do I need a degree to get a job as a fresher?</h3>
-            <p>A graduate degree is preferred but not always mandatory. We have hired candidates with strong communication skills and a willingness to learn, even without a formal degree.</p>
+            <div class="faq-item">
+                <h3>Which skill is most important for freshers in 2026?</h3>
+                <p>Communication. It affects every part of your job &mdash; from interviews to daily work to career growth. Invest time in improving how you speak, write, and listen.</p>
+            </div>
 
-            <h3>How long does it take to learn these skills?</h3>
-            <p>Most skills on this list can be developed in 4 to 8 weeks with consistent practice. Focus on one skill at a time rather than trying to learn everything at once.</p>
+            <div class="faq-item">
+                <h3>Do I need to know AI tools to get a fresher job?</h3>
+                <p>You do not need to be an expert, but basic awareness of AI tools like ChatGPT, Canva, or Google Bard shows employers you are adaptable. Mentioning this on your resume gives you a competitive edge in 2026.</p>
+            </div>
 
-            <h3>What is the most important skill for a fresher?</h3>
-            <p>Communication. It affects every aspect of your job&mdash;from interviews to daily work to career growth. Invest time in improving how you speak, write, and listen.</p>
+            <div class="faq-item">
+                <h3>How long does it take to learn these 5 skills?</h3>
+                <p>Most of these skills can be developed in 4 to 8 weeks with consistent practice. Focus on one skill at a time rather than trying to master everything at once.</p>
+            </div>
 
-            <h3>Can I apply without knowing all these skills?</h3>
-            <p>Absolutely. These are guidelines to help you prepare, not a checklist you must complete before applying. If you have a positive attitude and a willingness to learn, we encourage you to apply.</p>
+            <div class="faq-item">
+                <h3>Can I apply without knowing all these skills?</h3>
+                <p>Absolutely. These are guidelines to help you prepare, not a checklist you must complete before applying. If you have a positive attitude and a willingness to learn, we encourage you to apply.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do I need a degree to get a job as a fresher?</h3>
+                <p>A graduate degree is preferred but not always mandatory. We have hired candidates with strong communication skills and a willingness to learn, even without a formal degree.</p>
+            </div>
 
         <!-- CTA -->
         <div class="cta-blog">
