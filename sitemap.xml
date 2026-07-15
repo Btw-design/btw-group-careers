@@ -3,15 +3,21 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://careers.btwgroup.co/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://careers.btwgroup.co/blog/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://careers.btwgroup.co/blog/visa-travel-industry-careers-2026-thane-navi-mumbai/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://careers.btwgroup.co/blog/top-skills-required-to-become-a-successful-visa-executive/</loc>
