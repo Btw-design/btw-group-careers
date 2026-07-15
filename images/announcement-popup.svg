@@ -1,0 +1,267 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1080"
+     height="1080"
+     viewBox="0 0 1080 1080">
+
+  <defs>
+    <style>
+      .dm { font-family: "DM Sans", Arial, sans-serif; }
+      .roboto { font-family: "Roboto", Arial, sans-serif; }
+    </style>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18"
+                    flood-color="#0A1628" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+
+  <!-- ==================================================
+       HEADER
+  =================================================== -->
+  <rect x="0" y="0" width="1080" height="8" fill="#A5D549"/>
+
+  <text x="70" y="72"
+        class="dm"
+        font-size="26"
+        font-weight="800"
+        fill="#0A1628">
+    BTW VISA SERVICES
+  </text>
+
+  <text x="70" y="102"
+        class="roboto"
+        font-size="12"
+        font-weight="600"
+        letter-spacing="3"
+        fill="#77838E">
+    PROFESSIONAL VISA SERVICES SINCE 2011
+  </text>
+
+  <!-- MILESTONE -->
+  <text x="1010" y="70"
+        text-anchor="end"
+        class="dm"
+        font-size="24"
+        font-weight="700"
+        fill="#0A1628">
+    15 YEARS
+  </text>
+
+  <text x="1010" y="100"
+        text-anchor="end"
+        class="roboto"
+        font-size="13"
+        font-weight="600"
+        letter-spacing="2"
+        fill="#7FAE2F">
+    2011 — 2026
+  </text>
+
+  <line x1="70" y1="140" x2="1010" y2="140"
+        stroke="#E1E5E8"
+        stroke-width="1"/>
+
+  <!-- ==================================================
+       HERO
+  =================================================== -->
+  <text x="70" y="215"
+        class="roboto"
+        font-size="14"
+        font-weight="700"
+        letter-spacing="5"
+        fill="#7FAE2F">
+    COMPANY ANNOUNCEMENT
+  </text>
+
+  <text x="70" y="310"
+        class="dm"
+        font-size="68"
+        font-weight="700"
+        fill="#0A1628">
+    15 Years of Excellence.
+  </text>
+
+  <text x="70" y="390"
+        class="dm"
+        font-size="68"
+        font-weight="700"
+        fill="#8AB936">
+    Expanding Our Presence.
+  </text>
+
+  <text x="75" y="455"
+        class="roboto"
+        font-size="22"
+        font-weight="400"
+        fill="#65727E">
+    As we celebrate 15 years of trusted visa expertise,
+  </text>
+
+  <text x="75" y="488"
+        class="roboto"
+        font-size="22"
+        font-weight="400"
+        fill="#65727E">
+    we are pleased to announce the next phase of our growth.
+  </text>
+
+  <!-- ==================================================
+       ANNOUNCEMENT PANEL
+  =================================================== -->
+  <g filter="url(#shadow)">
+
+    <rect x="70"
+          y="550"
+          width="940"
+          height="145"
+          rx="8"
+          fill="#0A1628"/>
+
+    <rect x="70"
+          y="550"
+          width="8"
+          height="145"
+          fill="#A5D549"/>
+
+    <text x="120" y="600"
+          class="roboto"
+          font-size="13"
+          font-weight="700"
+          letter-spacing="4"
+          fill="#A5D549">
+      EXPANSION ANNOUNCEMENT
+    </text>
+
+    <text x="120" y="655"
+          class="dm"
+          font-size="38"
+          font-weight="700"
+          fill="#FFFFFF">
+      New branches coming soon to
+    </text>
+
+  </g>
+
+  <!-- ==================================================
+       LOCATIONS
+  =================================================== -->
+  <g filter="url(#shadow)">
+
+    <!-- ANDHERI -->
+    <rect x="70"
+          y="735"
+          width="455"
+          height="135"
+          rx="8"
+          fill="#F5F7F3"/>
+
+    <rect x="70"
+          y="735"
+          width="6"
+          height="135"
+          fill="#0A1628"/>
+
+    <text x="110" y="780"
+          class="roboto"
+          font-size="12"
+          font-weight="700"
+          letter-spacing="3"
+          fill="#7FAE2F">
+      NEW BRANCH 01
+    </text>
+
+    <text x="110" y="835"
+          class="dm"
+          font-size="42"
+          font-weight="700"
+          fill="#0A1628">
+      ANDHERI
+    </text>
+
+    <!-- NAVI MUMBAI -->
+    <rect x="555"
+          y="735"
+          width="455"
+          height="135"
+          rx="8"
+          fill="#F5F7F3"/>
+
+    <rect x="555"
+          y="735"
+          width="6"
+          height="135"
+          fill="#A5D549"/>
+
+    <text x="595" y="780"
+          class="roboto"
+          font-size="12"
+          font-weight="700"
+          letter-spacing="3"
+          fill="#7FAE2F">
+      NEW BRANCH 02
+    </text>
+
+    <text x="595" y="835"
+          class="dm"
+          font-size="40"
+          font-weight="700"
+          fill="#0A1628">
+      NAVI MUMBAI
+    </text>
+
+  </g>
+
+  <!-- ==================================================
+       CLOSING MESSAGE
+  =================================================== -->
+  <text x="540" y="930"
+        text-anchor="middle"
+        class="dm"
+        font-size="20"
+        font-weight="600"
+        fill="#0A1628">
+    Growing our network. Strengthening our commitment.
+  </text>
+
+  <text x="540" y="965"
+        text-anchor="middle"
+        class="roboto"
+        font-size="15"
+        font-weight="500"
+        letter-spacing="2"
+        fill="#7FAE2F">
+    COMING SOON
+  </text>
+
+  <!-- ==================================================
+       CONTACT FOOTER
+  =================================================== -->
+  <rect x="0" y="1005" width="1080" height="75" fill="#0A1628"/>
+
+  <rect x="0" y="1000" width="1080" height="5" fill="#A5D549"/>
+
+  <text x="65" y="1049"
+        class="roboto"
+        font-size="16"
+        font-weight="500"
+        fill="#FFFFFF">
+    022 6981 4000 / 022 4583 0600
+  </text>
+
+  <line x1="540" y1="1023" x2="540" y2="1060"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        opacity="0.20"/>
+
+  <text x="600" y="1049"
+        class="roboto"
+        font-size="17"
+        font-weight="500"
+        fill="#FFFFFF">
+    inquiry@btwvisas.com
+  </text>
+
+</svg>

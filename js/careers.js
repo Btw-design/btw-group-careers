@@ -151,3 +151,44 @@
                 });
             });
         }
+
+        // ============================================
+        // Announcement Popup
+        // ============================================
+        (function() {
+            var popup = document.getElementById('announcementPopup');
+            var closeBtn = document.getElementById('popupCloseBtn');
+            if (!popup || !closeBtn) return;
+
+            // Check if already shown this session
+            if (sessionStorage.getItem('announcementShown')) return;
+
+            function showPopup() {
+                popup.classList.add('visible');
+                document.body.style.overflow = 'hidden';
+                sessionStorage.setItem('announcementShown', 'true');
+            }
+
+            function hidePopup() {
+                popup.classList.remove('visible');
+                document.body.style.overflow = '';
+            }
+
+            // Show after a short delay so the page renders first
+            setTimeout(showPopup, 600);
+
+            // Close on X button
+            closeBtn.addEventListener('click', hidePopup);
+
+            // Close on backdrop click (only when clicking the backdrop itself, not its children)
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) hidePopup();
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popup.classList.contains('visible')) {
+                    hidePopup();
+                }
+            });
+        })();
