@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -157,54 +157,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.25;
             margin-bottom: 16px;
         }
-        .blog-hero-img {
+        .blog-banner {
             width: 100%;
-            height: 240px;
-            background: linear-gradient(135deg, #073E61 0%, #0A5A8A 100%);
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 36px;
-            position: relative;
             overflow: hidden;
+            margin-bottom: 36px;
+            line-height: 0;
         }
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            position: relative;
+        .blog-banner svg {
+            display: block;
+            width: 100%;
+            height: auto;
         }
-        .hero-badge {
-            display: inline-block;
-            background: #A5D549;
-            color: #1C2D3A;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 4px 16px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-        }
-        .hero-title {
-            color: #ffffff;
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin: 0;
-            letter-spacing: 0px;
-        }
-        .hero-sub {
-            color: #B0C9DA;
-            font-size: 0.95rem;
-            margin-top: 6px;
-        }
-        .hero-accent {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(165, 213, 73, 0.08);
-        }
-        .hero-accent-1 { width: 200px; height: 200px; top: -50px; right: -40px; }
-        .hero-accent-2 { width: 140px; height: 140px; bottom: -40px; left: -30px; }
         h2 {
             font-size: 1.4rem;
             font-weight: 700;
@@ -238,6 +202,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin-bottom: 6px;
         }
         .highlight-box p { margin-bottom: 0; color: #3D5263; }
+
+        /* Anchored Summary */
+        .anchored-summary {
+            background: #F4FAEC;
+            border: 1px solid #D6E9C3;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin: 28px 0 36px 0;
+        }
+        .anchored-summary .as-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #A5D549;
+            margin-bottom: 12px;
+        }
+        .anchored-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+        .anchored-summary ul li {
+            margin: 0;
+        }
+        .anchored-summary ul li a {
+            color: #073E61;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .anchored-summary ul li a:hover {
+            color: #A5D549;
+            border-bottom-color: #A5D549;
+        }
+        @media (max-width: 600px) {
+            .anchored-summary ul { flex-direction: column; gap: 4px; }
+        }
 
         .cta-blog {
             text-align: center;
@@ -506,15 +515,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h1>Visa and Travel Industry Careers in 2026: Job Opportunities in Thane and Navi Mumbai</h1>
 
-        <!-- Hero -->
-        <div class="blog-hero-img">
-            <div class="hero-accent hero-accent-1"></div>
-            <div class="hero-accent hero-accent-2"></div>
-            <div class="hero-content">
-                <div class="hero-badge">Thane &amp; Navi Mumbai</div>
-                <div class="hero-title">Visa &amp; Travel Careers 2026</div>
-                <div class="hero-sub">Your Guide to the Industry's Best Opportunities</div>
-            </div>
+        <!-- Hero Banner SVG -->
+        <div class="blog-banner">
+            <svg width="1980" height="1080" viewBox="0 0 1980 1080" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="display: block; width: 100%; height: auto;">
+
+              <defs>
+                <linearGradient id="bg2" x1="0" y1="0" x2="1980" y2="1080" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#07182A"/>
+                  <stop offset="1" stop-color="#0D2945"/>
+                </linearGradient>
+                <linearGradient id="accent2" x1="1200" y1="0" x2="1980" y2="1080" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#A5D549" stop-opacity="0.18"/>
+                  <stop offset="1" stop-color="#A5D549" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+
+              <!-- BACKGROUND -->
+              <rect width="1980" height="1080" fill="url(#bg2)"/>
+              <rect width="1980" height="1080" fill="url(#accent2)"/>
+
+              <!-- TOP GREEN LINE -->
+              <rect width="1980" height="10" fill="#A5D549"/>
+
+              <!-- BRAND -->
+              <g transform="translate(120 90)">
+                <rect width="54" height="54" rx="12" fill="#A5D549"/>
+                <path d="M16 18H38M16 27H34M16 36H30" stroke="#07182A" stroke-width="4" stroke-linecap="round"/>
+                <text x="75" y="27" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">BTW GROUP</text>
+                <text x="75" y="51" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="4" fill="#A5D549">CAREERS</text>
+              </g>
+
+              <!-- YEAR BADGE -->
+              <g transform="translate(1660 95)">
+                <rect width="200" height="52" rx="26" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.15"/>
+                <text x="100" y="34" text-anchor="middle" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">CAREERS 2026</text>
+              </g>
+
+              <!-- MAIN CONTENT -->
+              <g transform="translate(120 280)">
+                <text x="0" y="0" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="4" fill="#A5D549">CAREER OPPORTUNITIES</text>
+                <text x="0" y="135" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2" fill="#FFFFFF">Visa and Travel</text>
+                <text x="0" y="240" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2" fill="#FFFFFF">Industry Careers</text>
+                <text x="0" y="345" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2" fill="#A5D549">in 2026</text>
+                <text x="0" y="435" font-family="Roboto, Arial, sans-serif" font-size="31" font-weight="400" fill="#C8D4DF">Job Opportunities in Thane and Navi Mumbai</text>
+
+                <!-- LOCATIONS -->
+                <g transform="translate(0 510)">
+                  <rect width="205" height="70" rx="35" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.15"/>
+                  <circle cx="38" cy="35" r="8" fill="#A5D549"/>
+                  <text x="65" y="44" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">THANE</text>
+                  <path d="M235 35H305" stroke="#A5D549" stroke-width="3" stroke-linecap="round"/>
+                  <rect x="335" width="300" height="70" rx="35" fill="#A5D549"/>
+                  <circle cx="375" cy="35" r="8" fill="#07182A"/>
+                  <text x="402" y="44" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="25" font-weight="700" fill="#07182A">NAVI MUMBAI</text>
+                </g>
+              </g>
+
+              <!-- RIGHT DECORATIVE VISUAL -->
+              <g transform="translate(1360 320)">
+                <circle cx="250" cy="250" r="250" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+                <circle cx="250" cy="250" r="175" fill="#A5D549" fill-opacity="0.08" stroke="#A5D549" stroke-opacity="0.35" stroke-width="2"/>
+                <circle cx="250" cy="250" r="105" fill="none" stroke="#A5D549" stroke-width="6"/>
+                <ellipse cx="250" cy="250" rx="45" ry="105" fill="none" stroke="#A5D549" stroke-width="5"/>
+                <path d="M145 250H355" stroke="#A5D549" stroke-width="5"/>
+                <path d="M165 195H335" stroke="#A5D549" stroke-width="5"/>
+                <path d="M165 305H335" stroke="#A5D549" stroke-width="5"/>
+              </g>
+
+              <!-- BOTTOM -->
+              <g transform="translate(120 950)">
+                <rect width="1740" height="1" fill="#FFFFFF" fill-opacity="0.15"/>
+                <text x="0" y="58" font-family="Roboto, Arial, sans-serif" font-size="21" fill="#FFFFFF" fill-opacity="0.55">Explore opportunities. Build skills. Grow your career.</text>
+                <text x="1740" y="58" text-anchor="end" font-family="DM Sans, Roboto, Arial, sans-serif" font-size="21" font-weight="700" fill="#A5D549">BTW GROUP CAREERS</text>
+              </g>
+
+            </svg>
+        </div>
+
+        <!-- Anchored Summary -->
+        <div class="anchored-summary" id="article-summary">
+            <div class="as-label">In This Article</div>
+            <ul>
+                <li><a href="#industry-boom">Why the Visa &amp; Travel Industry Is Booming</a></li>
+                <li><a href="#top-careers">Top Career Opportunities</a></li>
+                <li><a href="#salary">Salary Expectations</a></li>
+                <li><a href="#skills">Essential Skills</a></li>
+                <li><a href="#locations">Why Thane &amp; Navi Mumbai</a></li>
+                <li><a href="#btw-support">How BTW Group Supports Freshers</a></li>
+                <li><a href="#apply">How to Apply</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
         </div>
 
         <p>
@@ -550,7 +641,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 
-        <h2>Why the Visa and Travel Industry Is Booming in 2026</h2>
+        <h2 id="industry-boom">Why the Visa and Travel Industry Is Booming in 2026</h2>
         <p>
             Several factors are driving unprecedented growth in India's visa and travel sector:
         </p>
@@ -562,7 +653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Thane and Navi Mumbai as emerging hubs:</strong> These twin cities in the Mumbai Metropolitan Region have become thriving centres for travel and visa businesses, driven by their excellent connectivity, affordable real estate, and large talent pool of educated freshers.</li>
         </ul>
 
-        <h2>Top Career Opportunities in Visa and Travel Services in 2026</h2>
+        <h2 id="top-careers">Top Career Opportunities in Visa and Travel Services in 2026</h2>
         <p>
             The visa and travel industry offers a wide range of career paths suited to different interests and aptitudes. Here are the most in-demand roles in Thane and Navi Mumbai:
         </p>
@@ -592,7 +683,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Documentation specialists focus on the verification, organisation, and quality control of visa and travel documents. They ensure that every application meets the specific requirements of the destination country, reducing the risk of rejections and delays. This role requires a sharp eye for detail and excellent organisational skills.
         </p>
 
-        <h2>Salary Expectations for Freshers in 2026</h2>
+        <h2 id="salary">Salary Expectations for Freshers in 2026</h2>
         <p>
             Entry-level salaries in the visa and travel industry in Thane and Navi Mumbai are competitive and often include performance-based incentives. Here is a snapshot of current salary ranges:
         </p>
@@ -638,7 +729,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             In addition to base salary, employees at BTW Group enjoy annual performance reviews, bonus eligibility, health insurance benefits, and opportunities for rapid promotion based on performance.
         </p>
 
-        <h2>Essential Skills for a Career in Visa and Travel Services</h2>
+        <h2 id="skills">Essential Skills for a Career in Visa and Travel Services</h2>
         <p>
             Unlike many technical fields, the visa and travel industry does not require a specialised degree. What matters most is the right combination of soft skills and a willingness to learn. Here are the skills that will help you succeed:
         </p>
@@ -673,7 +764,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>Managing multiple client files simultaneously, tracking deadlines, and prioritising tasks are part of daily life in visa and travel services. Good organisational skills help you stay on top of your workload.</p>
         </div>
 
-        <h2>Why Thane and Navi Mumbai Are Great Locations for Travel Careers</h2>
+        <h2 id="locations">Why Thane and Navi Mumbai Are Great Locations for Travel Careers</h2>
         <p>
             Thane and Navi Mumbai have emerged as preferred destinations for visa and travel businesses. Here is why:
         </p>
@@ -685,7 +776,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><strong>Established business ecosystem:</strong> From IT parks in Airoli and Ghansoli to commercial hubs in Vashi, Thane West, and Navi Mumbai, the region has a mature business infrastructure.</li>
         </ul>
 
-        <h2>How BTW Group Supports Fresher Careers</h2>
+        <h2 id="btw-support">How BTW Group Supports Fresher Careers</h2>
         <p>
             At BTW Group, we believe in hiring for potential, not just experience. Our fresher programs are designed to help you build a strong foundation in the visa and travel industry:
         </p>
@@ -708,7 +799,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 
-        <h2>How to Apply for Visa and Travel Jobs at BTW Group</h2>
+        <h2 id="apply">How to Apply for Visa and Travel Jobs at BTW Group</h2>
         <p>
             Ready to start your career in the visa and travel industry? Here is how to apply:
         </p>
@@ -752,7 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </p>
         </div>
 
-        <h2>FAQs About Visa and Travel Careers in Thane &amp; Navi Mumbai</h2>
+        <h2 id="faq">FAQs About Visa and Travel Careers in Thane &amp; Navi Mumbai</h2>
 
         <div class="faq-item">
             <h3>What visa and travel jobs are available in Thane in 2026?</h3>
