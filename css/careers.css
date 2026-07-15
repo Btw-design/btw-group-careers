@@ -998,9 +998,59 @@ section.alt-bg {
     .hero-buttons .btn { width: 100%; text-align: center; }
     .job-meta { grid-template-columns: 1fr; }
     .nav-links a:not(.nav-cta) { display: none; }
+    .nav-links { gap: 12px; }
+    .nav-cta { padding: 5px 14px !important; font-size: 0.72rem !important; }
+    .nav-logo { font-size: 1rem; }
+    .nav-logo .muted { display: none; }
 }
 @media (max-width: 480px) {
     .container { padding: 0 18px; }
     h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.25rem; }
     .hero-highlight svg { max-width: 300px; }
+    .hero::after { display: none; }
+    .hero-badge { font-size: 0.68rem; padding: 4px 12px; }
+    .hero-content p { font-size: 0.92rem; }
+    section { padding: 48px 0; }
+    .hero { padding: 36px 0 40px; }
+    .section-header { margin-bottom: 32px; }
+    .section-header p { font-size: 0.9rem; }
+    .benefit-card { padding: 24px 16px; }
+    .benefit-card p { font-size: 0.82rem; }
+    .eb-card { padding: 24px 16px; }
+    .eb-card p { font-size: 0.82rem; }
+    .footer { padding: 24px 0; font-size: 0.76rem; }
+    .footer-links a { margin: 0 8px; font-size: 0.74rem; }
+    .faq-question { padding: 14px 16px; font-size: 0.84rem; }
+    .faq-answer p { font-size: 0.82rem; }
+    .faq-contact { padding: 24px 16px; }
+    .faq-contact h4 { font-size: 1rem; }
+    .fc-item { font-size: 0.88rem; }
+    .about-visual { padding: 32px 20px; }
+    .about-text p { font-size: 0.86rem; }
+    .company-item { padding: 10px 12px; }
+    .company-item .co-name { font-size: 0.74rem; }
+    .company-item .co-service { font-size: 0.68rem; }
+    .openings-footer p { font-size: 0.82rem; }
+    .scroll-top { bottom: 16px; right: 16px; width: 36px; height: 36px; font-size: 0.95rem; }
+}
+@media (max-width: 380px) {
+    .container { padding: 0 14px; }
+    h1 { font-size: 1.35rem; }
+    h2 { font-size: 1.15rem; }
+    section { padding: 40px 0; }
+    .hero { padding: 28px 0 32px; }
+    .hero-content p { font-size: 0.85rem; }
+    .hero-highlight svg { max-width: 240px; }
+    .process-timeline { padding-left: 36px; }
+    .tl-marker { width: 40px; height: 40px; left: -44px; }
+    .tl-content h4 { font-size: 0.95rem; }
+    .tl-content p { font-size: 0.84rem; }
+    .benefit-card h3 { font-size: 0.9rem; }
+    .eb-card h3 { font-size: 0.9rem; }
+    .job-card h3 { font-size: 0.9rem; }
+    .job-card .job-quick-info { font-size: 0.72rem; }
+    .faq-contact-list { gap: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; }
+    .footer-links a { margin: 0; }
 }
