@@ -42,6 +42,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:image" content="https://careers.btwgroup.co/og-image.png">
     <meta name="twitter:site" content="@btwgroup">
 
+    <!-- Mobile Responsive Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -672,7 +675,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="top-nav" role="navigation" aria-label="Main Navigation">
         <div class="container">
             <div class="nav-logo">BTW <span class="green">GROUP</span> <span class="muted">| Careers</span></div>
-            <div class="nav-links">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
                 <a href="#why-join">Why Join</a>
                 <a href="#openings">Openings</a>
                 <a href="#process">Process</a>
@@ -681,6 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="#faq">FAQ</a>
                 <a href="https://www.btwgroup.co/apply-now" class="nav-cta">Apply Now</a>
             </div>
+            <div class="nav-overlay" id="navOverlay"></div>
         </div>
     </nav>
 
