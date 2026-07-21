@@ -557,67 +557,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .int-faq-list { max-width: 800px; margin: 0 auto; }
 
         /* ---- Form ---- */
-        .int-form-wrap {
-            max-width: 720px;
-            margin: 0 auto;
-            background: #ffffff;
-            border: 1px solid #E8EEF0;
-            border-radius: 20px;
-            padding: 48px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.04);
-        }
-        .int-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-        .int-form-grid .full { grid-column: 1 / -1; }
-        .int-form-wrap label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #1C2D3A;
-            margin-bottom: 6px;
-        }
-        .int-form-wrap label .req { color: #E53935; }
-        .int-form-wrap input,
-        .int-form-wrap select,
-        .int-form-wrap textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1.5px solid #DCE2E5;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-family: inherit;
-            color: #1C2D3A;
-            background: #FAFBFC;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .int-form-wrap input:focus,
-        .int-form-wrap select:focus,
-        .int-form-wrap textarea:focus {
-            outline: none;
-            border-color: #A5D549;
-            box-shadow: 0 0 0 3px rgba(165,213,73,0.15);
-        }
-        .int-form-wrap textarea { resize: vertical; min-height: 100px; }
-        .int-form-wrap .btn-primary {
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-            background: #A5D549;
-            color: #1C2D3A;
-            box-shadow: 0 4px 20px rgba(165,213,73,0.30);
-            font-weight: 700;
-            margin-top: 6px;
-        }
-        .int-form-wrap .btn-primary:hover {
-            background: #96c840;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(165,213,73,0.40);
-        }
-        .int-form-wrap .form-note {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #8A9BA8;
-            margin-top: 16px;
-        }
 
         /* ---- Sticky Apply Button ---- */
         .sticky-apply {
@@ -668,8 +607,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .benefits-grid { grid-template-columns: repeat(2, 1fr); }
             .who-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: 1fr; }
-            .int-form-wrap { padding: 28px 20px; }
-            .int-form-grid { grid-template-columns: 1fr; }
+
         }
         @media (max-width: 480px) {
             .benefits-grid { grid-template-columns: 1fr; }
@@ -697,7 +635,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <a href="../#benefits">Benefits</a>
                 <a href="." class="active">Internship</a>
                 <a href="../blog/">Blog</a>
-                <a href="#apply-form" class="nav-cta">Apply Now</a>
+                <a href="https://www.btwgroup.co/apply-now" class="nav-cta">Apply Now</a>
             </div>
             <div class="nav-overlay" id="navOverlay"></div>
         </div>
@@ -718,7 +656,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     with certificate, stipend, and PPO opportunities.
                 </p>
                 <div class="int-hero-buttons">
-                    <a href="#apply-form" class="btn btn-primary">Apply for Internship</a>
+                    <a href="https://www.btwgroup.co/apply-now" class="btn btn-primary">Apply for Internship</a>
                     <a href="#partner" class="btn btn-outline-light">Partner with Us</a>
                 </div>
                 <div class="int-hero-stats">
@@ -1217,93 +1155,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- ============================================
-        SECTION 10 — APPLICATION FORM + COLLEGE PARTNERSHIP
+        SECTION 10 — APPLY FOR INTERNSHIP
         ============================================ -->
-        <section class="int-section" id="apply-form" aria-label="Internship Application Form">
+        <section class="int-section" id="apply-form" aria-label="Apply for Internship">
             <div class="container">
                 <div class="section-header">
                     <h2>Apply for <span>Internship</span></h2>
                     <p>Take the first step towards a transformative internship experience at BTW Group.</p>
                 </div>
-                <div class="int-form-wrap">
-                    <form id="internshipForm" action="https://www.btwgroup.co/apply-now" method="GET">
-                        <div class="int-form-grid">
-                            <div class="full">
-                                <label for="fullName">Full Name <span class="req">*</span></label>
-                                <input type="text" id="fullName" name="name" required placeholder="e.g. Rohan Sharma">
-                            </div>
-                            <div>
-                                <label for="email">Email <span class="req">*</span></label>
-                                <input type="email" id="email" name="email" required placeholder="rohan.s@email.com">
-                            </div>
-                            <div>
-                                <label for="phone">Phone Number <span class="req">*</span></label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210">
-                            </div>
-                            <div>
-                                <label for="college">College Name <span class="req">*</span></label>
-                                <input type="text" id="college" name="college" required placeholder="e.g. University of Mumbai">
-                            </div>
-                            <div>
-                                <label for="course">Course <span class="req">*</span></label>
-                                <input type="text" id="course" name="course" required placeholder="e.g. B.Com, BBA, B.Sc">
-                            </div>
-                            <div>
-                                <label for="gradYear">Graduation Year <span class="req">*</span></label>
-                                <select id="gradYear" name="gradYear" required>
-                                    <option value="">Select Year</option>
-                                    <option value="2026">2026</option>
-                                    <option value="2027">2027</option>
-                                    <option value="2028">2028</option>
-                                    <option value="2029">2029</option>
-                                    <option value="2025">2025 (Graduated)</option>
-                                    <option value="2024">2024 (Graduated)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="domain">Internship Domain <span class="req">*</span></label>
-                                <select id="domain" name="domain" required>
-                                    <option value="">Select Domain</option>
-                                    <option value="digital-marketing">Digital Marketing</option>
-                                    <option value="web-development">Web Development</option>
-                                    <option value="hr">HR / Human Resources</option>
-                                    <option value="finance">Finance &amp; Accounts</option>
-                                    <option value="business-development">Business Development</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="location">Preferred Location</label>
-                                <select id="location" name="location">
-                                    <option value="thane">Thane (Office-based)</option>
-                                    <option value="mumbai">Mumbai</option>
-                                    <option value="other">Other (Please specify in message)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="resume">Resume Upload <span class="req">*</span></label>
-                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-                            </div>
-                            <div>
-                                <label for="resumeAlt">Or paste LinkedIn/Portfolio URL</label>
-                                <input type="url" id="resumeAlt" name="resumeAlt" placeholder="https://linkedin.com/in/...">
-                            </div>
-                            <div class="full">
-                                <label for="message">Message / Cover Note</label>
-                                <textarea id="message" name="message" placeholder="Tell us why you are interested in this internship and what you hope to learn..."></textarea>
-                            </div>
-                            <div class="full" id="partner">
-                                <label for="partnerMsg">For College / TPO Partnerships</label>
-                                <textarea id="partnerMsg" name="partnerMsg" placeholder="If you are a TPO or placement coordinator, please share your college name, number of students, and preferred domains for partnership."></textarea>
-                            </div>
+                <div style="text-align:center;max-width:640px;margin:0 auto;">
+                    <p style="font-size:1.05rem;color:#5A6B7A;line-height:1.8;margin-bottom:32px;">
+                        Ready to launch your career? Click below to fill out a quick application on our secure portal. Our HR team will review your profile and get back to you within 3–5 business days.
+                    </p>
+                    <a href="https://www.btwgroup.co/apply-now" class="btn btn-primary" style="background:#A5D549;color:#1C2D3A;font-size:1.05rem;padding:16px 48px;box-shadow:0 4px 20px rgba(165,213,73,0.35);">Apply Now on BTW Group Portal &rarr;</a>
+                    <p style="margin-top:24px;font-size:0.9rem;color:#8A9BA8;">
+                        No registration required. Takes less than 5 minutes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+        SECTION 10B — COLLEGE / TPO PARTNERSHIPS
+        ============================================ -->
+        <section class="int-section alt" id="partner" aria-label="College and TPO Partnerships">
+            <div class="container">
+                <div class="section-header">
+                    <h2>College &amp; TPO <span>Partnerships</span></h2>
+                    <p>Partner with BTW Group to provide your students with industry-leading internship opportunities.</p>
+                </div>
+                <div style="max-width:720px;margin:0 auto;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px;">
+                        <div style="background:#ffffff;border:1px solid #E8EEF0;border-radius:12px;padding:24px;text-align:center;">
+                            <strong style="display:block;font-size:2rem;color:#A5D549;margin-bottom:4px;">Campus Drives</strong>
+                            <span style="font-size:0.88rem;color:#6B7B8A;">On-campus recruitment drives for partner colleges</span>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit Application</button>
-                        <p class="form-note">
-                            We respect your privacy. Your information will be kept confidential and used only for recruitment purposes.
+                        <div style="background:#ffffff;border:1px solid #E8EEF0;border-radius:12px;padding:24px;text-align:center;">
+                            <strong style="display:block;font-size:2rem;color:#A5D549;margin-bottom:4px;">Industrial Visits</strong>
+                            <span style="font-size:0.88rem;color:#6B7B8A;">Guided visits to our Thane office for students</span>
+                        </div>
+                        <div style="background:#ffffff;border:1px solid #E8EEF0;border-radius:12px;padding:24px;text-align:center;">
+                            <strong style="display:block;font-size:2rem;color:#A5D549;margin-bottom:4px;">Guest Lectures</strong>
+                            <span style="font-size:0.88rem;color:#6B7B8A;">Industry experts speak at your institution</span>
+                        </div>
+                        <div style="background:#ffffff;border:1px solid #E8EEF0;border-radius:12px;padding:24px;text-align:center;">
+                            <strong style="display:block;font-size:2rem;color:#A5D549;margin-bottom:4px;">Bulk Placements</strong>
+                            <span style="font-size:0.88rem;color:#6B7B8A;">Batch internship placements for your students</span>
+                        </div>
+                    </div>
+                    <div style="text-align:center;background:#ffffff;border:1px solid #E8EEF0;border-radius:16px;padding:32px;">
+                        <h4 style="margin-bottom:8px;">Want to partner with us?</h4>
+                        <p style="font-size:0.9rem;color:#5A6B7A;margin-bottom:20px;">Reach out to our HR team to discuss a partnership for your institution.</p>
+                        <p style="font-size:0.95rem;">
+                            <a href="mailto:hr@btwvisas.com" style="color:#1C2D3A;font-weight:600;">hr@btwvisas.com</a>
+                            <span style="color:#8A9BA8;margin:0 12px;">|</span>
+                            <a href="tel:+912269814000" style="color:#1C2D3A;font-weight:600;">022 6981 4000</a> Ext. 624/626
                         </p>
-                        <p class="form-note" style="margin-top:4px;">
-                            Or apply directly at <a href="https://www.btwgroup.co/apply-now" style="color:#1C2D3A;font-weight:600;text-decoration:underline;">btwgroup.co/apply-now</a>
-                        </p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1315,7 +1223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="container">
                 <h2>Start Your Career Journey with <span>BTW Group</span></h2>
                 <p>Apply for an Internship Today! Gain real skills, earn a certificate, and unlock your professional potential with India's most diversified service group.</p>
-                <a href="#apply-form" class="btn btn-primary">Apply for Internship</a>
+                <a href="https://www.btwgroup.co/apply-now" class="btn btn-primary">Apply for Internship</a>
                 <a href="https://www.btwgroup.co/apply-now" class="btn btn-outline" style="margin-left:12px;">Direct Application</a>
             </div>
         </section>
@@ -1350,7 +1258,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&uarr;</button>
 
     <!-- Sticky Apply Button (mobile) -->
-    <a href="#apply-form" class="sticky-apply" id="stickyApply">
+    <a href="https://www.btwgroup.co/apply-now" class="sticky-apply" id="stickyApply">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         Apply Now
     </a>
