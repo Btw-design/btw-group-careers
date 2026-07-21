@@ -198,6 +198,8 @@ section.alt-bg::before {
 }
 .nav-links a:not(.nav-cta):hover::after { width: 100%; }
 .nav-links a:not(.nav-cta):hover { color: #073E61; }
+.nav-links a:not(.nav-cta).active { color: #073E61; }
+.nav-links a:not(.nav-cta).active::after { width: 100%; }
 .nav-cta {
     padding: 7px 18px !important;
     font-size: 0.8rem !important;
