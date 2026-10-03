@@ -102,16 +102,18 @@ p  { color: var(--text); }
 .top-nav.nav-scrolled { box-shadow: 0 6px 20px rgba(8,38,56,.07); }
 .top-nav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); }
 
-.nav-logo { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; color: var(--navy-700); }
+.nav-logo { position: relative; display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; color: var(--navy-700); }
 .logo-mark {
     width: 38px; height: 38px; border-radius: 10px; background: var(--navy-700); color: #fff;
     display: inline-flex; align-items: center; justify-content: center;
     font-weight: 800; font-size: 1.15rem; letter-spacing: -.02em; position: relative;
 }
 .logo-mark::after { content: ''; position: absolute; right: 6px; bottom: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); }
+.logo-img { height: 50px; width: auto; flex-shrink: 0; display: block; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-.logo-text strong { font-size: 1.05rem; font-weight: 800; letter-spacing: -.01em; color: var(--navy-700); }
-.logo-text small { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+.logo-text strong { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.logo-text { padding-left: 14px; border-left: 1px solid var(--line-strong); }
+.logo-text small { font-size: .8rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--navy-700); margin: 0; }
 
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-overlay { display: none; }
@@ -146,6 +148,7 @@ p  { color: var(--text); }
 }
 @media (max-width: 920px) {
     :root { --header-h: 64px; }
+    .logo-img { height: 44px; }
     .hamburger { display: flex; }
     .nav-links {
         position: fixed; top: 0; right: 0; bottom: 0; width: min(320px, 86vw);
@@ -175,9 +178,10 @@ p  { color: var(--text); }
 .footer a:hover { color: #fff; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; }
 .footer-brand .nav-logo { color: #fff; margin-bottom: 18px; }
-.footer-brand .logo-mark { background: #fff; color: var(--navy-700); }
+.footer-brand .logo-img { height: 64px; background: #fff; padding: 5px 7px; border-radius: 10px; }
 .footer-brand .logo-text strong { color: #fff; }
-.footer-brand .logo-text small { color: #8FA5B5; }
+.footer-brand .logo-text { border-left-color: rgba(255,255,255,.25); }
+.footer-brand .logo-text small { color: #C5D3DD; font-size: .72rem; }
 .footer-brand p { color: #A9BBC8; max-width: 340px; line-height: 1.7; font-size: .92rem; }
 .footer-col .footer-title { color: #fff; font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 18px; font-weight: 700; }
 .footer-col li { margin-bottom: 11px; }
