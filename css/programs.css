@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Internship & College-partnership pages
+   Loaded AFTER the pages' legacy inline <style>; restyles the page-specific
+   components (hero, cards, steps, form) with the shared design tokens.
+   ========================================================================== */
+.int-page, .pp-page { padding-top: var(--header-h); }
+
+/* ---------- Hero ---------- */
+.int-hero, .pp-hero {
+    background: var(--surface-alt); background-image: radial-gradient(var(--line-strong) 1px, transparent 1px); background-size: 26px 26px;
+    color: var(--ink); padding: 88px 0 80px; border-bottom: 1px solid var(--line);
+}
+.int-hero::before, .int-hero::after, .pp-hero::before, .pp-hero::after { content: none; }
+.int-hero-badge, .pp-hero-badge {
+    background: #fff; border: 1px solid var(--line-strong); color: var(--navy-700); box-shadow: var(--shadow-sm);
+    padding: 7px 18px; font-size: .78rem; letter-spacing: .04em; text-transform: none;
+}
+.int-hero h1, .pp-hero h1 { color: var(--navy-900); font-size: clamp(2.1rem, 4.4vw, 3.3rem); max-width: 900px; margin-left: auto; margin-right: auto; }
+.int-hero h1 span, .pp-hero h1 span { -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--navy-700); background: linear-gradient(transparent 68%, rgba(165,213,73,.55) 68%); padding: 0 .08em; }
+.int-hero p, .pp-hero p { color: var(--text); font-size: 1.12rem; }
+.int-hero-buttons .btn-primary, .pp-hero-buttons .btn-primary { background: var(--navy-700); color: #fff; border-color: var(--navy-700); box-shadow: var(--shadow-sm); }
+.int-hero-buttons .btn-primary:hover, .pp-hero-buttons .btn-primary:hover { background: var(--navy-900); border-color: var(--navy-900); box-shadow: var(--shadow-md); }
+.int-hero-buttons .btn-outline-light, .pp-hero-buttons .btn-outline-light { background: #fff; color: var(--navy-700); border: 2px solid var(--line-strong); }
+.int-hero-buttons .btn-outline-light:hover, .pp-hero-buttons .btn-outline-light:hover { background: var(--navy-50); border-color: var(--navy-700); }
+.int-hero-stats, .pp-hero-stats { gap: 16px; margin-top: 52px; }
+.int-hero-stat, .pp-hero-stat { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 28px; min-width: 150px; box-shadow: var(--shadow-sm); }
+.int-hero-stat .num, .pp-hero-stat .num { color: var(--navy-700); font-size: 1.8rem; letter-spacing: -.02em; }
+.int-hero-stat .lbl, .pp-hero-stat .lbl { color: var(--muted); }
+
+/* ---------- Sections ---------- */
+.int-section, .pp-section { padding: 96px 0; }
+.int-section.alt, .pp-section.alt { background: var(--surface-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.int-section .section-header, .pp-section .section-header { margin-bottom: 56px; }
+.int-about-text p { font-size: 1.05rem; color: var(--text); }
+
+/* ---------- Cards ---------- */
+.int-about-highlight, .domain-card, .benefit-card, .who-card, .why-card, .testimonial-card,
+.why-partner-card, .service-card, .trust-card, .std-benefit-card, .industry-chip, .pp-testimonial-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+    transition: box-shadow .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+}
+.domain-card:hover, .benefit-card:hover, .why-card:hover, .why-partner-card:hover, .service-card:hover, .std-benefit-card:hover, .industry-chip:hover {
+    border-color: var(--line-strong); box-shadow: var(--shadow-md); transform: translateY(-3px);
+}
+.domain-card, .why-partner-card { padding: 32px 28px; }
+.domain-card p, .why-card p, .why-partner-card p, .benefit-card p, .service-card p, .std-benefit-card p { color: var(--muted); font-size: .93rem; line-height: 1.7; }
+.benefit-card h4, .who-card h4, .why-card h4, .service-card h4, .std-benefit-card h4, .why-partner-card h4 { color: var(--ink); }
+.int-about-highlight strong { color: var(--ink); }
+.int-about-highlight span, .who-card p { color: var(--muted); font-size: .88rem; }
+
+/* icon wells: one neutral treatment, navy glyphs */
+.domain-card .icon-wrap, .domain-card .icon-wrap.green, .domain-card .icon-wrap.navy,
+.benefit-card .icon-holder, .why-card .wc-icon, .why-card .wc-icon.green-bg, .why-card .wc-icon.navy-bg,
+.why-partner-card .wp-icon, .why-partner-card .wp-icon.g, .why-partner-card .wp-icon.n,
+.service-card .sc-icon, .service-card .sc-icon.g, .service-card .sc-icon.n,
+.std-benefit-card .sb-icon, .std-benefit-card .sb-icon.g, .std-benefit-card .sb-icon.n {
+    background: var(--navy-50); border: 1px solid var(--navy-100);
+}
+.domain-card svg, .benefit-card .icon-holder svg, .why-card svg, .why-partner-card .wp-icon svg, .service-card svg, .std-benefit-card svg,
+.int-about-highlight svg, .industry-chip svg { stroke: var(--navy-700); }
+.who-card .wc-icon { background: var(--navy-700); }
+.trust-card .num { color: var(--navy-700); }
+.trust-note { color: var(--muted); }
+.domain-details { border-top-color: var(--line); }
+.domain-details .dd-row .label { color: var(--ink); }
+.domain-details .dd-row .value { color: var(--muted); }
+.industry-chip { color: var(--ink); }
+.why-partner-card ul li { color: var(--text); font-size: .9rem; }
+.why-partner-card ul li::before { background: var(--green-600); }
+
+/* ---------- Steps ---------- */
+.process-step .step-num, .pp-process-step .step-num { background: var(--navy-700); color: #fff; box-shadow: 0 0 0 5px var(--navy-50); }
+.process-step .step-content h4, .pp-process-step .step-content h4 { color: var(--ink); font-size: 1.05rem; }
+.process-step .step-content p, .pp-process-step .step-content p { color: var(--muted); font-size: .95rem; }
+
+/* ---------- Testimonials ---------- */
+.testimonial-card, .pp-testimonial-card { padding: 32px 28px; }
+.testimonial-card::before, .pp-testimonial-card::before { color: var(--navy-700); opacity: .12; }
+.testimonial-card .quote, .pp-testimonial-card .quote { font-style: normal; color: var(--text); font-size: .98rem; line-height: 1.75; }
+.testimonial-card .author .avatar, .pp-testimonial-card .author .avatar { background: var(--navy-700); }
+.testimonial-card .author .info strong, .pp-testimonial-card .author .info strong { color: var(--ink); }
+.testimonial-card .author .info span, .pp-testimonial-card .author .info span { color: var(--muted); }
+
+/* ---------- Application / partner form (markup & behaviour untouched) ---------- */
+.pp-form-wrap { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.pp-form-wrap label { color: var(--ink); }
+.pp-form-wrap input, .pp-form-wrap select, .pp-form-wrap textarea { border: 1.5px solid var(--line-strong); border-radius: var(--radius-sm); background: #fff; color: var(--ink); }
+.pp-form-wrap input:focus, .pp-form-wrap select:focus, .pp-form-wrap textarea:focus { border-color: var(--navy-600); box-shadow: 0 0 0 3px rgba(14,82,130,.18); outline: none; }
+.pp-form-wrap .btn-primary { background: var(--navy-700); color: #fff; box-shadow: var(--shadow-sm); }
+.pp-form-wrap .btn-primary:hover { background: var(--navy-900); }
+
+/* Inline-styled green buttons in section bodies → brand primary */
+.int-section a.btn.btn-primary[style], .pp-section a.btn.btn-primary[style] { background: var(--navy-700) !important; color: #fff !important; border-color: var(--navy-700); box-shadow: var(--shadow-sm) !important; }
+.int-section a.btn.btn-primary[style]:hover, .pp-section a.btn.btn-primary[style]:hover { background: var(--navy-900) !important; }
+
+/* ---------- Floating apply button ---------- */
+.sticky-apply { background: var(--navy-700); color: #fff; box-shadow: var(--shadow-lg); border: 2px solid #fff; }
+.sticky-apply:hover { background: var(--navy-900); box-shadow: var(--shadow-lg); }
+body:has(.sticky-apply) .scroll-top { bottom: 88px; }
+
+@media (max-width: 768px) {
+    .int-hero, .pp-hero { padding: 56px 0 52px; }
+    .int-section, .pp-section { padding: 60px 0; }
+    .int-hero-stats, .pp-hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+    .int-hero-stat, .pp-hero-stat { min-width: 0; padding: 14px 10px; }
+    .int-hero-buttons .btn, .pp-hero-buttons .btn { width: 100%; }
+    .int-hero p, .pp-hero p { font-size: 1.02rem; }
+}
+
+/* Legacy inline-styled blocks inside the program pages */
+div[style*="grid-template-columns:1fr 1fr"] > div[style*="border-radius:12px"] { border-radius: var(--radius-lg) !important; border-color: var(--line) !important; }
+strong[style*="color:#A5D549"][style*="font-size:2rem"] { color: var(--navy-700) !important; font-size: 1.5rem !important; letter-spacing: -.02em; }
+@media (max-width: 640px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+}

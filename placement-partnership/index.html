@@ -47,6 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- External Styles -->
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/careers.css">
 
     <!-- ============================================
@@ -656,15 +657,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .industries-grid { grid-template-columns: 1fr; }
         }
     </style>
+    <link rel="stylesheet" href="../css/programs.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- ============================================
     NAVIGATION
     ============================================ -->
     <nav class="top-nav" role="navigation" aria-label="Main Navigation">
         <div class="container">
-            <a href="../" class="nav-logo">BTW <span class="green">GROUP</span> <span class="muted">| Careers</span></a>
+            <a href="../" class="nav-logo" aria-label="BTW Group Careers home"><span class="logo-mark" aria-hidden="true">B</span><span class="logo-text"><strong>BTW Group</strong><small>Careers</small></span></a>
             <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -682,7 +685,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </nav>
 
-    <main class="pp-page">
+    <main id="main" class="pp-page">
 
         <!-- ============================================
         SECTION 1 — HERO
@@ -1275,23 +1278,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ============================================ -->
     <footer class="footer" role="contentinfo">
         <div class="container">
-            <a href="https://btwgroup.co" class="footer-logo" aria-label="BTW Group Homepage">
-                <svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="36" height="36" rx="6" fill="#A5D549"/>
-                    <text x="18" y="24" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#1C2D3A">B</text>
-                    <text x="46" y="20" font-family="Arial,sans-serif" font-size="18" font-weight="800" fill="#ffffff">BTW</text>
-                    <text x="46" y="33" font-family="Arial,sans-serif" font-size="11" font-weight="600" fill="#8A9BA8" letter-spacing="2">GROUP</text>
-                </svg>
-            </a>
-            <div class="footer-links">
-                <a href="https://www.btwgroup.co">Home</a>
-                <a href="../">Careers</a>
-                <a href="../internship-program/">Internship</a>
-                <a href=".">Partnership</a>
-                <a href="../blog/">Blog</a>
-                <a href="https://www.btwgroup.co/contact">Contact</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="https://btwgroup.co" class="nav-logo" aria-label="BTW Group homepage"><span class="logo-mark" aria-hidden="true">B</span><span class="logo-text"><strong>BTW Group</strong><small>Building Trust Worldwide</small></span></a>
+                    <p>A diversified group of eight specialised companies serving individuals, corporates and institutions across India.</p>
+                </div>
+                <nav class="footer-col" aria-label="Careers">
+                    <p class="footer-title">Careers</p>
+                    <ul>
+                        <li><a href="../#openings">Current Openings</a></li>
+                        <li><a href="../#process">Hiring Process</a></li>
+                        <li><a href="../#benefits">Benefits</a></li>
+                        <li><a href="../#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="Explore">
+                    <p class="footer-title">Explore</p>
+                    <ul>
+                        <li><a href="../#about">About BTW Group</a></li>
+                        <li><a href="../internship-program/">Internship Program</a></li>
+                        <li><a href="../placement-partnership/">College Partnership</a></li>
+                        <li><a href="../blog/">Blog</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="Connect">
+                    <p class="footer-title">Connect</p>
+                    <ul>
+                        <li><a href="https://www.btwgroup.co">BTW Group Website</a></li>
+                        <li><a href="https://www.btwgroup.co/contact">Contact Us</a></li>
+                    </ul>
+                    <a href="https://hr.btwgroup.co/apply" class="footer-apply">Apply Now</a>
+                </nav>
             </div>
-            <p>&copy; 2026 <a href="https://www.btwgroup.co">BTW Group</a>. All rights reserved. | <a href="https://careers.btwgroup.co">careers.btwgroup.co</a></p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="https://www.btwgroup.co">BTW Group</a>. All rights reserved.</p>
+                <p><a href="https://careers.btwgroup.co">careers.btwgroup.co</a></p>
+            </div>
         </div>
     </footer>
 

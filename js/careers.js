@@ -132,8 +132,8 @@
         // Nav Link Active State on Scroll
         // ============================================
         var sections = document.querySelectorAll('section[id]');
-        var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-        if (sections.length && navLinks.length) {
+        var sectionNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        if (sections.length && sectionNavLinks.length) {
             window.addEventListener('scroll', function() {
                 var scrollPos = window.scrollY + 120;
                 var currentSection = '';
@@ -144,7 +144,7 @@
                         currentSection = section.getAttribute('id');
                     }
                 });
-                navLinks.forEach(function(link) {
+                sectionNavLinks.forEach(function(link) {
                     var href = link.getAttribute('href').replace('#', '');
                     link.style.color = href === currentSection ? '#073E61' : '';
                     // Style the underline via a custom property if needed
@@ -191,4 +191,35 @@
                     hidePopup();
                 }
             });
+        })();
+
+
+        // ============================================
+        // Job Openings Filter (progressive enhancement)
+        // ============================================
+        (function() {
+            var grid = document.querySelector('.openings-grid');
+            var filters = document.querySelectorAll('.job-filter');
+            var countEl = document.getElementById('openingsCount');
+            if (!grid || !filters.length) return;
+            var cards = Array.prototype.slice.call(grid.querySelectorAll('.job-card'));
+            function isClosed(c) { return !!c.querySelector('.job-type.is-closed'); }
+            function isIntern(c) { return !!c.querySelector('.job-type.is-intern'); }
+            function apply(mode) {
+                var shown = 0;
+                cards.forEach(function(c) {
+                    var show = mode === 'all' || (mode === 'open' && !isClosed(c)) || (mode === 'intern' && isIntern(c));
+                    c.hidden = !show;
+                    if (show) shown++;
+                });
+                filters.forEach(function(b) { b.setAttribute('aria-pressed', b.getAttribute('data-filter') === mode ? 'true' : 'false'); });
+                if (countEl) {
+                    var open = cards.filter(function(c) { return !isClosed(c); }).length;
+                    countEl.innerHTML = '<strong>' + open + '</strong> positions open now \u00b7 showing ' + shown + ' of ' + cards.length;
+                }
+            }
+            filters.forEach(function(b) {
+                b.addEventListener('click', function() { apply(b.getAttribute('data-filter')); });
+            });
+            apply('all');
         })();
