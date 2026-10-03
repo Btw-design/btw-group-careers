@@ -517,8 +517,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
         .blog-footer a { color: #073E61; text-decoration: none; font-weight: 500; }
     </style>
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/blog.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9DS74CF"
@@ -527,16 +530,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
     <!-- Navigation -->
-    <nav class="blog-nav">
+    <nav class="top-nav" role="navigation" aria-label="Main Navigation">
         <div class="container">
-            <a href="../../" class="logo">BTW Group <span>Careers</span></a>
-            <a href="../">&#8592; All Blogs</a>
-            <a href="../../#openings">Jobs</a>
+            <a href="../../" class="nav-logo" aria-label="BTW Group Careers home"><span class="logo-mark" aria-hidden="true">B</span><span class="logo-text"><strong>BTW Group</strong><small>Careers</small></span></a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="../../#why-join">Why Join</a>
+                <a href="../../#openings">Openings</a>
+                <a href="../../internship-program/">Internship</a>
+                <a href="../../placement-partnership/">Partnership</a>
+                <a href="../../blog/" class="active" aria-current="page">Blog</a>
+                <a href="https://hr.btwgroup.co/apply" class="nav-cta">Apply Now</a>
+            </div>
+            <div class="nav-overlay" id="navOverlay"></div>
         </div>
     </nav>
 
     <!-- Article -->
-    <article class="blog-article">
+    <article id="main" class="blog-article">
 
         <div class="blog-meta">
             <span>Career Guide</span>
@@ -752,12 +765,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="../../#openings" class="btn-outline">View Openings</a>
         </div>
 
+    
+        <aside class="related-posts" aria-labelledby="related-title">
+            <h2 id="related-title">Related articles</h2>
+            <div class="related-grid">
+                <a class="related-card" href="../top-skills-required-to-become-a-successful-visa-executive/">
+                    <span class="related-tag">Career Guide</span>
+                    <span class="related-title">Top Skills Required to Become a Successful Visa Executive</span>
+                    <span class="related-more">Read article &rarr;</span>
+                </a>
+                <a class="related-card" href="../visa-executive-career-growth-from-executive-to-team-leader/">
+                    <span class="related-tag">Career Guide</span>
+                    <span class="related-title">Visa Executive Career Growth: From Executive to Team Leader</span>
+                    <span class="related-more">Read article &rarr;</span>
+                </a>
+                <a class="related-card" href="../how-to-build-a-successful-career-in-the-insurance-industry/">
+                    <span class="related-tag">Career Guide</span>
+                    <span class="related-title">How to Build a Successful Career in the Insurance Industry</span>
+                    <span class="related-more">Read article &rarr;</span>
+                </a>
+            </div>
+        </aside>
     </article>
 
     <!-- Footer -->
-    <footer class="blog-footer">
-        <p>&copy; 2026 <a href="https://www.btwgroup.co">BTW Group</a>. All rights reserved. | <a href="https://careers.btwgroup.co">careers.btwgroup.co</a></p>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="https://btwgroup.co" class="nav-logo" aria-label="BTW Group homepage"><span class="logo-mark" aria-hidden="true">B</span><span class="logo-text"><strong>BTW Group</strong><small>Building Trust Worldwide</small></span></a>
+                    <p>A diversified group of eight specialised companies serving individuals, corporates and institutions across India.</p>
+                </div>
+                <nav class="footer-col" aria-label="Careers">
+                    <p class="footer-title">Careers</p>
+                    <ul>
+                        <li><a href="../../#openings">Current Openings</a></li>
+                        <li><a href="../../#process">Hiring Process</a></li>
+                        <li><a href="../../#benefits">Benefits</a></li>
+                        <li><a href="../../#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="Explore">
+                    <p class="footer-title">Explore</p>
+                    <ul>
+                        <li><a href="../../#about">About BTW Group</a></li>
+                        <li><a href="../../internship-program/">Internship Program</a></li>
+                        <li><a href="../../placement-partnership/">College Partnership</a></li>
+                        <li><a href="../../blog/">Blog</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="Connect">
+                    <p class="footer-title">Connect</p>
+                    <ul>
+                        <li><a href="https://www.btwgroup.co">BTW Group Website</a></li>
+                        <li><a href="https://www.btwgroup.co/contact">Contact Us</a></li>
+                    </ul>
+                    <a href="https://hr.btwgroup.co/apply" class="footer-apply">Apply Now</a>
+                </nav>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="https://www.btwgroup.co">BTW Group</a>. All rights reserved.</p>
+                <p><a href="https://careers.btwgroup.co">careers.btwgroup.co</a></p>
+            </div>
+        </div>
     </footer>
 
+    <script src="../../js/blog.js"></script>
 </body>
 </html>
