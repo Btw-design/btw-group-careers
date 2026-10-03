@@ -205,6 +205,9 @@
             var cards = Array.prototype.slice.call(grid.querySelectorAll('.job-card'));
             function isClosed(c) { return !!c.querySelector('.job-type.is-closed'); }
             function isIntern(c) { return !!c.querySelector('.job-type.is-intern'); }
+            // Open roles first, closed roles after (original order kept within each group)
+            cards = cards.filter(function(c) { return !isClosed(c); }).concat(cards.filter(isClosed));
+            cards.forEach(function(c) { grid.appendChild(c); });
             function apply(mode) {
                 var shown = 0;
                 cards.forEach(function(c) {
