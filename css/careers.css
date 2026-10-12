@@ -198,6 +198,15 @@ section.alt-bg { background: var(--surface-alt); border-top: 1px solid var(--lin
 .company-item:hover { box-shadow: var(--shadow-md); border-left-color: var(--green-500); }
 .company-item .co-name { font-size: .86rem; font-weight: 700; color: var(--ink); display: block; margin-bottom: 3px; line-height: 1.35; }
 .company-item .co-service { font-size: .8rem; color: var(--muted); }
+.recognition { margin-top: 32px; }
+.recognition h4 { font-size: .78rem; color: var(--green-700); margin-bottom: 16px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.recognition-card { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--navy-700); border-radius: var(--radius-sm); padding: 16px; text-decoration: none; transition: box-shadow .2s, border-color .2s; }
+.recognition-card:hover { box-shadow: var(--shadow-md); border-left-color: var(--green-500); }
+.recognition-card img { width: 108px; height: auto; border: 1px solid var(--line); border-radius: 4px; flex-shrink: 0; }
+.recognition-info { display: flex; flex-direction: column; gap: 4px; font-size: .84rem; color: var(--muted); line-height: 1.45; }
+.recognition-info strong { font-size: .95rem; color: var(--ink); }
+.recognition-info em { font-style: normal; font-weight: 600; color: var(--green-700); margin-top: 4px; }
+@media (max-width: 480px) { .recognition-card { flex-direction: column; align-items: flex-start; } }
 .about-visual {
     background: var(--navy-800); border-radius: var(--radius-lg); padding: 52px 40px; text-align: left; position: sticky; top: calc(var(--header-h) + 24px);
     display: flex; flex-direction: column; justify-content: center; overflow: hidden;
