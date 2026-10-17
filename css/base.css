@@ -204,3 +204,11 @@ p  { color: var(--text); }
 }
 .scroll-top.visible { display: flex; opacity: 1; transform: none; }
 .scroll-top:hover { background: var(--navy-700); color: #fff; }
+
+/* ---------- Scroll progress bar ---------- */
+.scroll-progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0;
+    background: linear-gradient(90deg, var(--green-500), var(--navy-600));
+    z-index: 200; pointer-events: none;
+    transition: width .12s linear;
+}

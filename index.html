@@ -54,6 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- External Styles -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/careers.css">
+    <noscript><style>.fade-up{opacity:1 !important;transform:none !important;}</style></noscript>
 
     <!-- ============================================
     SCHEMA MARKUP — Organization + Breadcrumb + FAQ + JobPosting
@@ -915,6 +916,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Styles live in css/base.css and css/careers.css -->
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <a class="skip-link" href="#home">Skip to main content</a>
 
     <!-- Google Tag Manager (noscript) -->
@@ -966,8 +968,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a href="#about" class="btn btn-outline">About BTW Group</a>
                 </div>
                 <div class="hero-stats" aria-label="BTW Group at a glance">
-                    <div class="hero-stat"><strong>15+</strong><span>Years of trust</span></div>
-                    <div class="hero-stat"><strong>8</strong><span>Group companies</span></div>
+                    <div class="hero-stat"><strong data-count="15" data-suffix="+">15+</strong><span>Years of trust</span></div>
+                    <div class="hero-stat"><strong data-count="8">8</strong><span>Group companies</span></div>
                     <div class="hero-stat"><strong>Thane &amp; Pune</strong><span>Hiring locations</span></div>
                 </div>
             </div>
@@ -1169,7 +1171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="why-join" id="why-join" aria-label="Why Join BTW Group">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <h2>Why Join <span>BTW Group</span>?</h2>
                 <div class="divider"></div>
                 <p>We invest in our people. Here is what makes BTW Group a great place to build your career.</p>
@@ -1233,7 +1235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="testimonials" id="testimonials" aria-label="What Our Employees Say">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <h2>What Our <span>Team Says</span></h2>
                 <div class="divider"></div>
                 <p>Real stories from real people — hear from our employees about their experience at BTW Group.</p>
@@ -1281,7 +1283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="openings" aria-label="Current Job Openings at BTW Group">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <h2>Current <span>Openings</span></h2>
                 <div class="divider"></div>
                 <p>Explore our latest job opportunities in Thane. Click "Apply Now" to submit your application.</p>
@@ -3159,7 +3161,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="benefits" aria-label="Employee Benefits at BTW Group">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <h2>Employee <span>Benefits</span></h2>
                 <div class="divider"></div>
                 <p>We care about your well-being and professional growth. Here is what you get when you join BTW Group.</p>
@@ -3210,11 +3212,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="company-tagline">Building Trust Worldwide — a diversified group serving individuals, corporates, and institutions across India.</div>
                     <div class="about-stats">
                         <div class="about-stat">
-                            <span class="num">15+</span>
+                            <span class="num" data-count="15" data-suffix="+">15+</span>
                             <span class="lbl">Years of Trust</span>
                         </div>
                         <div class="about-stat">
-                            <span class="num">8</span>
+                            <span class="num" data-count="8">8</span>
                             <span class="lbl">Group Companies</span>
                         </div>
                     </div>
@@ -3289,7 +3291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="faq" aria-label="Frequently Asked Questions about BTW Group Careers">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-up">
                 <h2>Frequently Asked <span>Questions</span></h2>
                 <div class="divider"></div>
                 <p>Find answers to common questions about careers at BTW Group.</p>
@@ -3365,7 +3367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     FINAL CTA
     ============================================ -->
     <section class="cta-final" id="apply" aria-label="Apply at BTW Group Today">
-        <div class="container">
+        <div class="container fade-up">
             <h2>Ready to Start Your Journey with <span>BTW Group</span>?</h2>
             <p>Take the first step towards a rewarding career. We are hiring across multiple roles in Thane. Apply today and let your potential shine.</p>
             <a href="https://hr.btwgroup.co/apply" class="btn btn-primary">View All Openings &amp; Apply Now</a>

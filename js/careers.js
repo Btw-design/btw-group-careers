@@ -226,3 +226,58 @@
             });
             apply('all');
         })();
+
+        // ============================================
+        // Scroll Progress Bar
+        // ============================================
+        (function() {
+            var bar = document.getElementById('scrollProgress');
+            if (!bar) return;
+            function update() {
+                var doc = document.documentElement;
+                var max = doc.scrollHeight - doc.clientHeight;
+                var top = window.pageYOffset || doc.scrollTop || 0;
+                var pct = max > 0 ? (top / max) * 100 : 0;
+                bar.style.width = pct + '%';
+            }
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+            update();
+        })();
+
+        // ============================================
+        // Animated Stat Counters
+        // ============================================
+        (function() {
+            var els = document.querySelectorAll('[data-count]');
+            if (!els.length) return;
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function run(el) {
+                var target = parseFloat(el.getAttribute('data-count'));
+                var suffix = el.getAttribute('data-suffix') || '';
+                if (isNaN(target)) return;
+                if (reduce) { el.textContent = target + suffix; return; }
+                var duration = 1400, start = null;
+                function step(ts) {
+                    if (start === null) start = ts;
+                    var p = Math.min((ts - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);   // easeOutCubic
+                    el.textContent = Math.round(target * eased) + suffix;
+                    if (p < 1) { requestAnimationFrame(step); }
+                    else { el.textContent = target + suffix; }
+                }
+                requestAnimationFrame(step);
+            }
+
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) { run(entry.target); io.unobserve(entry.target); }
+                    });
+                }, { threshold: 0.4 });
+                els.forEach(function(el) { io.observe(el); });
+            } else {
+                els.forEach(run);
+            }
+        })();
