@@ -49,11 +49,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- External Styles -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/careers.css">
+    <link rel="stylesheet" href="css/home.css">
     <noscript><style>.fade-up{opacity:1 !important;transform:none !important;}</style></noscript>
 
     <!-- ============================================
@@ -954,6 +955,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     HERO SECTION
     ============================================ -->
     <section class="hero" id="home" aria-label="BTW Group Careers Hero">
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="blob blob-1"></span>
+            <span class="blob blob-2"></span>
+            <span class="blob blob-3"></span>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">Now Hiring — Multiple Positions in Thane</span>
@@ -974,6 +980,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <div class="hero-highlight">
+                <div class="hero-visual-card">
+                    <span class="float-chip chip-1">ISO Certified</span>
+                    <span class="float-chip chip-2">8 Group Companies</span>
+                    <span class="float-chip chip-3">Freshers Welcome</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 1080 1080" role="img" aria-label="Celebrating 15 Years of Visa Excellence BTW Visa Services">
 
                   <defs>
@@ -1162,16 +1172,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         fill="url(#green)"/>
 
                 </svg>
+                    <span class="float-chip chip-4">Thane &amp; Pune</span>
+                </div>
             </div>
         </div>
+        <a class="hero-scroll-cue" href="#why-join" aria-label="Scroll to explore">
+            <span class="cue-dot"></span>
+            <span class="cue-text">Explore</span>
+        </a>
     </section>
+
+    <!-- ============================================
+    TRUST MARQUEE
+    ============================================ -->
+    <div class="trust-marquee" aria-label="BTW Group companies and credentials">
+        <div class="marquee-track">
+            <span class="marquee-item">BTW Visa Services</span>
+            <span class="marquee-item">PEC Attestation &amp; Apostille</span>
+            <span class="marquee-item">Journey Cart Holidays</span>
+            <span class="marquee-item">BTW Financial Services &amp; IMF</span>
+            <span class="marquee-item">Travind Institute of Travel &amp; Tourism</span>
+            <span class="marquee-item">Pisum Food Services</span>
+            <span class="marquee-item">Cart 91 Shopping &amp; Services</span>
+            <span class="marquee-item">WGBL India</span>
+            <span class="marquee-item">ISO-Certified Processes</span>
+            <span class="marquee-item">15+ Years of Trust</span>
+            <span class="marquee-item">BTW Visa Services</span>
+            <span class="marquee-item">PEC Attestation &amp; Apostille</span>
+            <span class="marquee-item">Journey Cart Holidays</span>
+            <span class="marquee-item">BTW Financial Services &amp; IMF</span>
+            <span class="marquee-item">Travind Institute of Travel &amp; Tourism</span>
+            <span class="marquee-item">Pisum Food Services</span>
+            <span class="marquee-item">Cart 91 Shopping &amp; Services</span>
+            <span class="marquee-item">WGBL India</span>
+            <span class="marquee-item">ISO-Certified Processes</span>
+            <span class="marquee-item">15+ Years of Trust</span>
+        </div>
+    </div>
 
     <!-- ============================================
     WHY JOIN BTW GROUP
     ============================================ -->
     <section class="why-join" id="why-join" aria-label="Why Join BTW Group">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header fade-up" data-eyebrow="Why Join Us">
                 <h2>Why Join <span>BTW Group</span>?</h2>
                 <div class="divider"></div>
                 <p>We invest in our people. Here is what makes BTW Group a great place to build your career.</p>
@@ -1235,7 +1279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="testimonials" id="testimonials" aria-label="What Our Employees Say">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header fade-up" data-eyebrow="Testimonials">
                 <h2>What Our <span>Team Says</span></h2>
                 <div class="divider"></div>
                 <p>Real stories from real people — hear from our employees about their experience at BTW Group.</p>
@@ -1283,7 +1327,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="openings" aria-label="Current Job Openings at BTW Group">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header fade-up" data-eyebrow="Open Roles">
                 <h2>Current <span>Openings</span></h2>
                 <div class="divider"></div>
                 <p>Explore our latest job opportunities in Thane. Click "Apply Now" to submit your application.</p>
@@ -3161,7 +3205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="benefits" aria-label="Employee Benefits at BTW Group">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header fade-up" data-eyebrow="Perks &amp; Benefits">
                 <h2>Employee <span>Benefits</span></h2>
                 <div class="divider"></div>
                 <p>We care about your well-being and professional growth. Here is what you get when you join BTW Group.</p>
@@ -3291,7 +3335,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <section class="alt-bg" id="faq" aria-label="Frequently Asked Questions about BTW Group Careers">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header fade-up" data-eyebrow="FAQ">
                 <h2>Frequently Asked <span>Questions</span></h2>
                 <div class="divider"></div>
                 <p>Find answers to common questions about careers at BTW Group.</p>
