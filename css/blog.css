@@ -164,3 +164,7 @@ main#main > .container article p { font-size: 1.05rem; line-height: 1.85; color:
 main#main > .container article li { font-size: 1.03rem; line-height: 1.75; color: var(--text); }
 main#main > .container article .post-meta { font-size: .84rem; margin-bottom: 32px; }
 @media (max-width: 640px) { main#main > .container { padding: 28px 20px 64px; } }
+
+/* ---------- Contrast on dark callouts ---------- */
+main#main > .container article .cta-blog p { color: #C5D6E2; }
+.stat-box .stat-label { color: #C5D6E2; }
