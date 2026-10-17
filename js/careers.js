@@ -208,23 +208,77 @@
             // Open roles first, closed roles after (original order kept within each group)
             cards = cards.filter(function(c) { return !isClosed(c); }).concat(cards.filter(isClosed));
             cards.forEach(function(c) { grid.appendChild(c); });
-            function apply(mode) {
+
+            var state = { mode: 'all', q: '', loc: '' };
+            var form = document.getElementById('jobFinder');
+            var qInput = document.getElementById('jfQuery');
+            var locSelect = document.getElementById('jfLocation');
+
+            // Message shown when nothing matches
+            var empty = document.createElement('div');
+            empty.className = 'openings-empty';
+            empty.hidden = true;
+            empty.setAttribute('role', 'status');
+            empty.innerHTML = '<strong>No roles match your search.</strong><span>Try a different keyword or location, or clear the search to see every opening.</span>';
+            var clearBtn = document.createElement('button');
+            clearBtn.type = 'button';
+            clearBtn.className = 'btn btn-outline openings-clear';
+            clearBtn.textContent = 'Clear search';
+            empty.appendChild(clearBtn);
+            grid.parentNode.insertBefore(empty, grid.nextSibling);
+
+            function text(c, sel) { var n = c.querySelector(sel); return n ? n.textContent.toLowerCase() : ''; }
+            function matches(c) {
+                if (state.mode === 'open' && isClosed(c)) return false;
+                if (state.mode === 'intern' && !isIntern(c)) return false;
+                if (state.loc && text(c, '.job-quick-info').indexOf(state.loc.toLowerCase()) === -1) return false;
+                if (state.q) {
+                    var hay = (text(c, '.card-top-row') + ' ' + text(c, '.job-quick-info') + ' ' + text(c, '.job-details-wrap'));
+                    var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+                    for (var i = 0; i < words.length; i++) { if (hay.indexOf(words[i]) === -1) return false; }
+                }
+                return true;
+            }
+            function apply() {
                 var shown = 0;
                 cards.forEach(function(c) {
-                    var show = mode === 'all' || (mode === 'open' && !isClosed(c)) || (mode === 'intern' && isIntern(c));
+                    var show = matches(c);
                     c.hidden = !show;
                     if (show) shown++;
                 });
-                filters.forEach(function(b) { b.setAttribute('aria-pressed', b.getAttribute('data-filter') === mode ? 'true' : 'false'); });
+                filters.forEach(function(b) { b.setAttribute('aria-pressed', b.getAttribute('data-filter') === state.mode ? 'true' : 'false'); });
+                empty.hidden = shown !== 0;
                 if (countEl) {
                     var open = cards.filter(function(c) { return !isClosed(c); }).length;
-                    countEl.innerHTML = '<strong>' + open + '</strong> positions open now \u00b7 showing ' + shown + ' of ' + cards.length;
+                    var searching = state.q || state.loc;
+                    countEl.innerHTML = '<strong>' + open + '</strong> positions open now \u00b7 showing ' + shown + ' of ' + cards.length +
+                        (searching ? ' \u00b7 <button type="button" class="link-btn" id="clearSearchLink">Clear search</button>' : '');
+                    var link = document.getElementById('clearSearchLink');
+                    if (link) link.addEventListener('click', clearSearch);
                 }
             }
+            function clearSearch() {
+                state.q = ''; state.loc = '';
+                if (qInput) qInput.value = '';
+                if (locSelect) locSelect.value = '';
+                apply();
+            }
             filters.forEach(function(b) {
-                b.addEventListener('click', function() { apply(b.getAttribute('data-filter')); });
+                b.addEventListener('click', function() { state.mode = b.getAttribute('data-filter'); apply(); });
             });
-            apply('all');
+            clearBtn.addEventListener('click', clearSearch);
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    state.q = qInput ? qInput.value.trim() : '';
+                    state.loc = locSelect ? locSelect.value : '';
+                    // searching should show open roles first; keep the user's chosen filter otherwise
+                    apply();
+                    var target = document.getElementById('openings');
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
+            apply();
         })();
 
         // ============================================

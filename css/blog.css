@@ -168,3 +168,6 @@ main#main > .container article .post-meta { font-size: .84rem; margin-bottom: 32
 /* ---------- Contrast on dark callouts ---------- */
 main#main > .container article .cta-blog p { color: #C5D6E2; }
 .stat-box .stat-label { color: #C5D6E2; }
+
+/* Numbers inside dark stat boxes must be light */
+.stat-box .stat-number { color: #fff; }
