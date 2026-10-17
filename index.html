@@ -956,11 +956,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ============================================ -->
     <main id="main">
     <section class="hero" id="home" aria-label="BTW Group Careers Hero">
-        <div class="hero-aurora" aria-hidden="true">
-            <span class="blob blob-1"></span>
-            <span class="blob blob-2"></span>
-            <span class="blob blob-3"></span>
-        </div>
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">Now Hiring — Multiple Positions in Thane</span>
@@ -970,6 +965,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     Whether you are a fresher or an experienced professional, BTW Group
                     offers you the platform to grow, learn, and succeed across our family of companies.
                 </p>
+                                <form class="job-finder" id="jobFinder" role="search" aria-label="Search job openings">
+                    <div class="jf-field">
+                        <label for="jfQuery">Role or keyword</label>
+                        <input type="search" id="jfQuery" name="q" placeholder="e.g. Visa, Marketing, Account" autocomplete="off">
+                    </div>
+                    <div class="jf-field jf-field-loc">
+                        <label for="jfLocation">Location</label>
+                        <select id="jfLocation" name="loc">
+                            <option value="">All locations</option>
+                            <option value="Thane">Thane</option>
+                            <option value="Pune">Pune</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary jf-submit">Find roles</button>
+                </form>
                 <div class="hero-buttons">
                     <a href="#openings" class="btn btn-primary">View Openings</a>
                     <a href="#about" class="btn btn-outline">About BTW Group</a>
@@ -982,9 +992,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="hero-highlight">
                 <div class="hero-visual-card">
-                    <span class="float-chip chip-1">ISO Certified</span>
-                    <span class="float-chip chip-2">8 Group Companies</span>
-                    <span class="float-chip chip-3">Freshers Welcome</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 1080 1080" role="img" aria-label="Celebrating 15 Years of Visa Excellence BTW Visa Services">
 
                   <defs>
@@ -1173,43 +1180,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         fill="url(#green)"/>
 
                 </svg>
-                    <span class="float-chip chip-4">Thane &amp; Pune</span>
                 </div>
             </div>
         </div>
-        <a class="hero-scroll-cue" href="#why-join" aria-label="Scroll to explore">
-            <span class="cue-dot"></span>
-            <span class="cue-text">Explore</span>
-        </a>
     </section>
 
     <!-- ============================================
     TRUST MARQUEE
     ============================================ -->
-    <div class="trust-marquee" aria-label="BTW Group companies and credentials">
-        <div class="marquee-track">
-            <span class="marquee-item">BTW Visa Services</span>
-            <span class="marquee-item">PEC Attestation &amp; Apostille</span>
-            <span class="marquee-item">Journey Cart Holidays</span>
-            <span class="marquee-item">BTW Financial Services &amp; IMF</span>
-            <span class="marquee-item">Travind Institute of Travel &amp; Tourism</span>
-            <span class="marquee-item">Pisum Food Services</span>
-            <span class="marquee-item">Cart 91 Shopping &amp; Services</span>
-            <span class="marquee-item">WGBL India</span>
-            <span class="marquee-item">ISO-Certified Processes</span>
-            <span class="marquee-item">15+ Years of Trust</span>
-            <span class="marquee-item" aria-hidden="true">BTW Visa Services</span>
-            <span class="marquee-item" aria-hidden="true">PEC Attestation &amp; Apostille</span>
-            <span class="marquee-item" aria-hidden="true">Journey Cart Holidays</span>
-            <span class="marquee-item" aria-hidden="true">BTW Financial Services &amp; IMF</span>
-            <span class="marquee-item" aria-hidden="true">Travind Institute of Travel &amp; Tourism</span>
-            <span class="marquee-item" aria-hidden="true">Pisum Food Services</span>
-            <span class="marquee-item" aria-hidden="true">Cart 91 Shopping &amp; Services</span>
-            <span class="marquee-item" aria-hidden="true">WGBL India</span>
-            <span class="marquee-item" aria-hidden="true">ISO-Certified Processes</span>
-            <span class="marquee-item" aria-hidden="true">15+ Years of Trust</span>
+    <section class="group-strip" aria-label="The BTW Group family of companies">
+        <div class="container">
+            <p class="group-strip-label">One group, eight specialised companies</p>
+            <ul class="group-strip-list">
+                <li>BTW Visa Services</li>
+                <li>PEC Attestation &amp; Apostille</li>
+                <li>Journey Cart Holidays</li>
+                <li>BTW Financial Services &amp; IMF</li>
+                <li>Travind Institute of Travel &amp; Tourism</li>
+                <li>Pisum Food Services</li>
+                <li>Cart 91 Shopping &amp; Services</li>
+                <li>WGBL India</li>
+            </ul>
         </div>
-    </div>
+    </section>
 
     <!-- ============================================
     WHY JOIN BTW GROUP
