@@ -153,3 +153,14 @@ body { background: var(--surface); color: var(--text); line-height: 1.75; }
     .cta-blog { padding: 36px 22px; }
     .cta-blog .btn-primary, .cta-blog .btn-outline { display: flex; width: 100%; margin: 0 0 10px; }
 }
+
+/* ---------- Posts that use the breadcrumb + <article> layout ---------- */
+main#main > .container { max-width: 800px; padding: 40px 24px 88px; }
+main#main > .container .breadcrumb { font-size: .86rem; margin-bottom: 28px; color: var(--muted); }
+main#main > .container .breadcrumb a { color: var(--navy-700); text-decoration: underline; text-underline-offset: 3px; }
+main#main > .container article h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15; letter-spacing: -.03em; color: var(--navy-900); margin-bottom: 16px; }
+main#main > .container article h2 { font-size: 1.5rem; margin: 52px 0 14px; color: var(--navy-900); }
+main#main > .container article p { font-size: 1.05rem; line-height: 1.85; color: var(--text); margin-bottom: 20px; }
+main#main > .container article li { font-size: 1.03rem; line-height: 1.75; color: var(--text); }
+main#main > .container article .post-meta { font-size: .84rem; margin-bottom: 32px; }
+@media (max-width: 640px) { main#main > .container { padding: 28px 20px 64px; } }
