@@ -212,3 +212,10 @@ p  { color: var(--text); }
     z-index: 200; pointer-events: none;
     transition: width .12s linear;
 }
+
+/* ---------- Accessibility refinements ---------- */
+/* Links inside running text must not rely on colour alone */
+p a:not([class]), li a:not([class]), .footer-bottom a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+p a:not([class]):hover, li a:not([class]):hover, .footer-bottom a:hover { text-decoration-thickness: 2px; }
+/* Keyboard users can scroll wide tables */
+table[tabindex]:focus-visible { outline: 3px solid var(--navy-600); outline-offset: 2px; }
