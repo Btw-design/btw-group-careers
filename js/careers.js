@@ -209,7 +209,7 @@
             cards = cards.filter(function(c) { return !isClosed(c); }).concat(cards.filter(isClosed));
             cards.forEach(function(c) { grid.appendChild(c); });
 
-            var state = { mode: 'all', q: '', loc: '' };
+            var state = { mode: 'all', q: '', loc: '', locTerms: [] };
             var form = document.getElementById('jobFinder');
             var qInput = document.getElementById('jfQuery');
             var locSelect = document.getElementById('jfLocation');
@@ -231,7 +231,13 @@
             function matches(c) {
                 if (state.mode === 'open' && isClosed(c)) return false;
                 if (state.mode === 'intern' && !isIntern(c)) return false;
-                if (state.loc && text(c, '.job-quick-info').indexOf(state.loc.toLowerCase()) === -1) return false;
+                if (state.loc) {
+                    var info = text(c, '.job-quick-info');
+                    var terms = state.locTerms.length ? state.locTerms : [state.loc.toLowerCase()];
+                    var hit = false;
+                    for (var t = 0; t < terms.length; t++) { if (info.indexOf(terms[t]) !== -1) { hit = true; break; } }
+                    if (!hit) return false;
+                }
                 if (state.q) {
                     var hay = (text(c, '.card-top-row') + ' ' + text(c, '.job-quick-info') + ' ' + text(c, '.job-details-wrap'));
                     var words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -258,7 +264,7 @@
                 }
             }
             function clearSearch() {
-                state.q = ''; state.loc = '';
+                state.q = ''; state.loc = ''; state.locTerms = [];
                 if (qInput) qInput.value = '';
                 if (locSelect) locSelect.value = '';
                 apply();
@@ -272,6 +278,10 @@
                     e.preventDefault();
                     state.q = qInput ? qInput.value.trim() : '';
                     state.loc = locSelect ? locSelect.value : '';
+                    // an option can list extra place names it should match (e.g. Mumbai also covers Dadar)
+                    var opt = locSelect && locSelect.options[locSelect.selectedIndex];
+                    var extra = opt && opt.getAttribute('data-match');
+                    state.locTerms = extra ? extra.split(',') : [];
                     // searching should show open roles first; keep the user's chosen filter otherwise
                     apply();
                     var target = document.getElementById('openings');
