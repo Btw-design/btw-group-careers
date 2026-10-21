@@ -245,3 +245,11 @@ section { padding: 104px 0; }
     .openings-toolbar { position: static; }
     .group-strip-list li { font-size: .82rem; padding: 7px 13px; }
 }
+
+/* Badge text may wrap on narrow screens: keep the dot round and aligned to the first line */
+.hero-badge { line-height: 1.4; border-radius: 22px; }
+.hero-badge::before { flex-shrink: 0; }
+@media (max-width: 640px) {
+    .hero-badge { align-items: flex-start; font-size: .78rem; }
+    .hero-badge::before { margin-top: 5px; }
+}
