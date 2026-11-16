@@ -299,7 +299,10 @@ function buildDashboard_(ss) {
       '=COUNTIF(' + q + c + '2:' + c + ',"Not shortlisted")'
     ]);
   });
-  sh.getRange(7, 1, rows.length, 6).setFormulas(rows);
+  // setFormulas would turn the plain role name into a formula (=Digital Marketing Intern -> #ERROR!),
+  // so the names go in as text and only the counts are formulas.
+  sh.getRange(7, 1, rows.length, 1).setValues(rows.map(function (r) { return [r[0]]; }));
+  sh.getRange(7, 2, rows.length, 5).setFormulas(rows.map(function (r) { return r.slice(1); }));
   try { sh.setColumnWidth(1, 240); sh.setFrozenRows(0); } catch (ignore) { /* layout only */ }
 }
 
