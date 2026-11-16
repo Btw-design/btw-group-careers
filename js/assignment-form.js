@@ -226,7 +226,10 @@
             body: JSON.stringify(payload),
             signal: ctrl ? ctrl.signal : undefined
         }).then(function (res) {
-            return res.json().catch(function () { return { ok: res.ok }; });
+            // Success only if the intake script itself answers {"ok":true}. Anything else
+            // (a Google login page, an error page, a wrong URL) is treated as a failure,
+            // so a candidate is never told "submitted" when nothing was saved.
+            return res.json().catch(function () { return { ok: false }; });
         }).then(function (json) {
             window.clearTimeout(timer);
             if (json && json.ok) {

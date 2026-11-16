@@ -1,48 +1,114 @@
-# Turning on the internship assignments (HR setup, about 5 minutes)
+# Internship assignments: Google Sheet setup (about 10 minutes)
 
-The two starter assignments (Digital Marketing Intern and Video Editor Intern) are built into the careers website.
-They stay **switched off** until you connect them to a Google Sheet. After that, each submission is saved as a row
-in the sheet and you get an email.
+This connects the two assignments (Digital Marketing Intern, Video Editor Intern) to a Google Sheet.
 
-Until you finish these steps, the **Apply Now** buttons work exactly as before and candidates never see an assignment.
+**What you get:** every submission is saved as a new row, **Digital Marketing and Video Editor in separate tabs**, and HR gets an **email for every new submission**.
 
-## Steps
+You do not need to know how to code. Just copy, paste and click.
 
-1. **Create a Google Sheet** (any name, for example "Internship assignment submissions").
-2. In the sheet, open **Extensions > Apps Script**.
-3. Delete the sample code, then **paste the whole contents of `Code.gs`** (the file next to this one). Click **Save**.
-4. Near the top of the code, check `HR_EMAIL` is the inbox that should get notifications.
-5. Click **Deploy > New deployment**. Choose the type **Web app**, then set:
-   - **Execute as:** Me
-   - **Who has access:** Anyone
-6. Click **Deploy** and allow the permissions Google asks for (it needs to edit the sheet and send email).
-7. **Copy the Web app URL** (it ends with `/exec`).
-8. In the website code, open `js/assignment-config.js` and paste the URL between the quotes:
+> Until you finish this and the website is updated (Step 9), nothing changes for candidates. The **Apply Now** buttons work exactly as before.
 
+---
+
+## Part A: Create the sheet and the script
+
+### Step 1. Create the Google Sheet
+1. Go to https://sheets.google.com and click **Blank spreadsheet**.
+2. Name it **Internship assignment submissions** (click "Untitled spreadsheet" at the top left).
+3. Use a Google account that HR controls (ideally the shared HR account). This account will own the sheet and send the notification emails.
+
+### Step 2. Open the script editor
+1. In the sheet, click **Extensions > Apps Script**. A new tab opens.
+
+### Step 3. Paste the code
+1. In the editor you will see a file called `Code.gs` with a few lines of sample code. **Select everything and delete it.**
+2. Open the file `Code.gs` from this folder (`docs/assignment-setup/Code.gs`), **copy all of it**, and **paste it** into the editor.
+3. Click the **Save** icon (disk).
+
+### Step 4. Set the HR email address
+1. Near the top of the code, find this line:
+   `var HR_EMAIL = 'hr@btwvisas.com';`
+2. Change the address to the inbox that should get a notification for every submission. For more than one person, separate with commas: `'hr@btwvisas.com, hiring@btwvisas.com'`
+3. Click **Save**.
+
+### Step 5. Run the built-in self-test (this also gives permission)
+1. At the top, next to the **Run** button, choose the function **`testSetup`** from the drop-down.
+2. Click **Run**.
+3. Google asks for permission. Click **Review permissions**, choose your account, then:
+   - If you see **"Google hasn't verified this app"**, click **Advanced**, then **Go to (project name) (unsafe)**. This is normal for your own script.
+   - Click **Allow**. (It needs to edit this sheet and send email.)
+4. Run `testSetup` again if it asked you to authorise first.
+
+**What you should see:** in the log at the bottom: `Result: {"ok":true} | Row saved in the "Digital Marketing Intern" tab: YES | HR email: sent`
+
+### Step 6. Check the self-test worked
+- In the Google Sheet, there is now a tab called **Digital Marketing Intern** with a row named **TEST - please ignore**.
+- The HR inbox received an email: *"Assignment: Digital Marketing Intern - TEST - please ignore"*. (Check spam if you do not see it.)
+
+If both are true, the sheet and the email part work. You can delete the test row.
+
+---
+
+## Part B: Publish it and test it for real
+
+### Step 7. Deploy as a web app
+1. In the script editor, click **Deploy > New deployment**.
+2. Click the gear icon next to "Select type" and choose **Web app**.
+3. Set:
+   - **Description:** Assignment intake
+   - **Execute as:** **Me**
+   - **Who has access:** **Anyone**
+     (This only lets the website *send* answers in. Nobody can read your sheet through it. The sheet stays private.)
+4. Click **Deploy**, then **copy the Web app URL**. It ends with `/exec`.
+
+### Step 8. Test the live web app
+1. Paste the URL into a new browser tab. You should see exactly: `{"ok":true,"service":"BTW assignment intake"}`
+2. Now open the file **`test-submit.html`** (in this same folder) by double-clicking it on your computer.
+3. Paste your Web app URL into the box and click **Send test submissions**.
+4. You should see two green results (one for each role). Then check:
+   - The sheet now has **two tabs**: **Digital Marketing Intern** and **Video Editor Intern**, each with a new TEST row.
+   - HR received **two emails**.
+   - In the Digital Marketing tab, the test name `=1+1` is shown **exactly as `=1+1`**, not as the number 2. (This proves no formula can run.)
+5. Send the URL to the developer (or continue to Step 9). Delete the TEST rows when you are done.
+
+### Step 9. Switch the assignments on
+1. In the website code, open `js/assignment-config.js`.
+2. Paste your URL between the quotes:
    ```js
    window.BTW_ASSIGNMENT = {
        endpoint: 'https://script.google.com/macros/s/XXXXXXXX/exec'
    };
    ```
-9. Publish the change. Done.
+3. Publish the website change (merge the pull request). After a minute or two the assignment step is live.
 
-## Check that it works
+### Step 10. One last check on the live site
+1. On the careers site, click **Apply Now** on Digital Marketing Intern. Choose **Start the assignment**, type your name, email and phone, and submit.
+2. You should see **"Thank you ... Your assignment has been submitted"** and a **Continue to application** button.
+3. A new row appears in the sheet and an email arrives. Delete the test row.
+4. Click **Apply Now** again, then **Skip and go straight to the application**. You should land on the normal HR application.
 
-- Open the web app URL in a browser. You should see `{"ok":true,"service":"BTW assignment intake"}`.
-- On the careers site, click **Apply Now** on the Digital Marketing Intern job. Do the assignment with a test name and email, and submit.
-  You should see the "Your assignment has been submitted" message, a new row in the sheet, and an email.
+---
 
-## What candidates see
+## If something does not work
 
-1. They click **Apply Now** on Digital Marketing Intern or Video Editor Intern.
-2. A friendly window explains the assignment (about 20 to 30 minutes for Digital Marketing, 30 to 45 minutes for Video Editing)
-   and offers **Start the assignment** or **Skip and go straight to the application**.
-3. After they submit, a confirmation page says thank you and shows a **Continue to application** button that opens your existing HR portal.
-4. People who already submitted or skipped go straight to the HR application next time (for 30 days).
+| What you see | What to do |
+|---|---|
+| Opening the web app URL asks you to sign in | In Step 7, **Who has access** must be **Anyone**. Redeploy: **Deploy > Manage deployments > pencil icon > Version: New version > Deploy**. |
+| The website says "we could not send your answers" | The URL in `assignment-config.js` is wrong or the deployment is restricted. Re-do Step 7 and Step 8. |
+| Row saved but **HR email** column says `FAILED` | Google limits emails per day (about 100 for a free Gmail account, 1,500 for Google Workspace). The answers are still saved. Check the sheet. |
+| You changed the code later | **Deploy > Manage deployments > pencil icon > Version: New version > Deploy.** The URL stays the same. |
+| A candidate says they submitted twice | Fine. A resend is recognised and saved only once. |
 
-Only the name, email and mobile number are required. Everything else is optional, so nobody is blocked or put off.
+## Is it secure?
 
-## Changing questions
+- The web app **only accepts submissions**. It never sends sheet data back to anyone.
+- The sheet is private. Share it only with people in HR.
+- Only the two assignment roles are accepted, and each goes to its own tab.
+- There are size limits, a hidden spam trap, and candidate text is saved as plain text so it can never run as a formula.
+- The HR email address is set in the script. The website cannot change it.
+- The web app address is visible in the website's code (that is how every website form works). That is why the script checks and limits everything it receives.
+- Candidate details (name, email, phone, answers) are personal data. Limit access to the sheet and delete old rows according to your HR policy.
 
+## Changing the questions later
 The questions are plain HTML in `assignment/digital-marketing-intern/index.html` and `assignment/video-editor-intern/index.html`.
-New questions appear automatically as new columns in the sheet.
+A new question automatically becomes a new column in the sheet.
