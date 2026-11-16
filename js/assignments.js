@@ -3,8 +3,8 @@
 
    Clicking "Apply Now" on one of these roles opens a short, friendly
    "Before you apply" dialog:
-     - start the starter assignment (a short beginner-level questionnaire on its
-       own page, with a clear submit button and confirmation), or
+     - start the starter assignment (in the Assignment Portal: register, multiple-choice and
+       practical questions, submit and confirmation), or
      - skip straight to the HR application if the assignment isn't required.
 
    Progressive enhancement and safe by default:
@@ -21,14 +21,14 @@
 
     var ROLES = {
         'Digital Marketing Intern': {
-            page: 'assignment/digital-marketing-intern/',
+            page: 'assignment-portal/digital-marketing-intern/',
             minutes: '20 to 30 minutes',
-            what: '10 short questions, 5 small practical tasks and 2 quick questions about you.'
+            what: '8 multiple-choice questions, a few small practical tasks and 2 quick questions about you.'
         },
         'Video Editor Intern': {
-            page: 'assignment/video-editor-intern/',
+            page: 'assignment-portal/video-editor-intern/',
             minutes: '30 to 45 minutes',
-            what: '8 short questions, one small practical edit and 2 quick questions about you.'
+            what: '7 multiple-choice questions, one small practical edit and 2 quick questions about you.'
         }
     };
 

@@ -30,7 +30,8 @@
 
 <h2>Then check</h2>
 <ol>
-  <li>The Google Sheet has two tabs: <strong>Digital Marketing Intern</strong> (1 TEST row) and <strong>Video Editor Intern</strong> (2 TEST rows: one normal, one "Duplicate test").</li>
+  <li>The Google Sheet has a <strong>Dashboard</strong> tab and two role tabs: <strong>Digital Marketing Intern</strong> (1 TEST row) and <strong>Video Editor Intern</strong> (2 TEST rows: one normal, one "Duplicate test").</li>
+  <li>The Digital Marketing TEST row shows <strong>MCQ score 2/8</strong> and Review status <strong>New</strong>. The Video Editor TEST row shows <strong>1/7</strong>.</li>
   <li>HR received <strong>three emails</strong> in total (not four: the duplicate must not send a second email).</li>
   <li>The reply to the 2nd duplicate send said <code>"duplicate":true</code>.</li>
   <li>In the Digital Marketing tab the name shows exactly <code>=1+1</code> (not the number 2).</li>
@@ -45,7 +46,7 @@
     return JSON.stringify({
       id: 'test-' + Date.now() + '-' + Math.random().toString(16).slice(2),
       role: role, name: 'TEST =1+1 (please ignore)', email: 'test@example.com', phone: '+91 00000 00000',
-      status: 'Test', website: '',
+      status: 'Test', website: '', startedAt: new Date(Date.now() - 7 * 60000).toISOString(),
       fields: Object.assign({ 'Q1. Connection test': 'This is a test submission from test-submit.html.' }, extra)
     });
   }
@@ -60,8 +61,8 @@
     out.innerHTML = '';
     if (!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(url)) { add(false, 'That does not look like a Web app URL. It should start with https://script.google.com/macros/s/ and end with /exec'); return; }
     btn.disabled = true; btn.textContent = 'Sending...';
-    send(url, 'Digital Marketing Intern', { 'Q2. Test answer': 'Digital marketing test' })
-      .then(function () { return send(url, 'Video Editor Intern', { 'Your video': 'https://example.com/test-video' }); })
+    send(url, 'Digital Marketing Intern', { 'M1. What is digital marketing?': 'Promoting products or services using the internet and digital channels', 'M2. What does SEO stand for?': 'Search Engine Optimization', 'M3. Why is SEO important for a business?': 'It makes the office internet faster' })
+      .then(function () { return send(url, 'Video Editor Intern', { 'M1. What does the 9:16 shape mean for Instagram Reels?': 'A tall, vertical video: the shape used for Instagram Reels and YouTube Shorts', 'P1. Link to your finished Reel': 'https://example.com/test-video' }); })
       .then(function () {
         // Duplicate check: the SAME submission sent twice (like a candidate pressing "Try again").
         // Expect the 2nd reply to say "duplicate":true, and only ONE extra row + ONE extra email.
