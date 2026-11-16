@@ -21,7 +21,7 @@
 </head>
 <body>
 <h1>Assignment intake: connection test</h1>
-<p>Open this file on your computer (double-click). It sends <strong>two clearly marked TEST submissions</strong> (one per role) to your Google web app, exactly like the website will.</p>
+<p>Open this file on your computer (double-click). It sends <strong>clearly marked TEST submissions</strong> to your Google web app, exactly like the website will: one for each role, plus one submission sent twice on purpose to test duplicate handling.</p>
 
 <label for="url">Your Web app URL (ends with <code>/exec</code>)</label>
 <input id="url" type="url" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off">
@@ -30,8 +30,9 @@
 
 <h2>Then check</h2>
 <ol>
-  <li>The Google Sheet has two tabs: <strong>Digital Marketing Intern</strong> and <strong>Video Editor Intern</strong>, each with a TEST row.</li>
-  <li>HR received <strong>two emails</strong>.</li>
+  <li>The Google Sheet has two tabs: <strong>Digital Marketing Intern</strong> (1 TEST row) and <strong>Video Editor Intern</strong> (2 TEST rows: one normal, one "Duplicate test").</li>
+  <li>HR received <strong>three emails</strong> in total (not four: the duplicate must not send a second email).</li>
+  <li>The reply to the 2nd duplicate send said <code>"duplicate":true</code>.</li>
   <li>In the Digital Marketing tab the name shows exactly <code>=1+1</code> (not the number 2).</li>
   <li>Delete the TEST rows when you are done.</li>
 </ol>
@@ -48,10 +49,10 @@
       fields: Object.assign({ 'Q1. Connection test': 'This is a test submission from test-submit.html.' }, extra)
     });
   }
-  function send(url, role, extra) {
-    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: payload(role, extra) })
+  function send(url, role, extra, fixedBody, label) {
+    return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: fixedBody || payload(role, extra) })
       .then(function (r) { return r.json(); })
-      .then(function (j) { add(!!j.ok, (j.ok ? 'OK: ' : 'FAILED: ') + role + ' -> ' + JSON.stringify(j)); })
+      .then(function (j) { add(!!j.ok, (j.ok ? 'OK: ' : 'FAILED: ') + (label || role) + ' -> ' + JSON.stringify(j)); return j; })
       .catch(function (e) { add(false, 'FAILED: ' + role + ' -> could not reach the web app (' + e.message + '). Check the URL and that "Who has access" is "Anyone".'); });
   }
   btn.addEventListener('click', function () {
@@ -61,6 +62,13 @@
     btn.disabled = true; btn.textContent = 'Sending...';
     send(url, 'Digital Marketing Intern', { 'Q2. Test answer': 'Digital marketing test' })
       .then(function () { return send(url, 'Video Editor Intern', { 'Your video': 'https://example.com/test-video' }); })
+      .then(function () {
+        // Duplicate check: the SAME submission sent twice (like a candidate pressing "Try again").
+        // Expect the 2nd reply to say "duplicate":true, and only ONE extra row + ONE extra email.
+        var dup = payload('Video Editor Intern', { 'Q2. Duplicate test': 'Sent twice on purpose' });
+        return send(url, 'Video Editor Intern', null, dup, 'Duplicate test, 1st send (Video Editor)')
+          .then(function () { return send(url, 'Video Editor Intern', null, dup, 'Duplicate test, 2nd send (should say duplicate:true)'); });
+      })
       .then(function () { btn.disabled = false; btn.textContent = 'Send test submissions'; });
   });
 })();

@@ -65,9 +65,10 @@ If both are true, the sheet and the email part work. You can delete the test row
 1. Paste the URL into a new browser tab. You should see exactly: `{"ok":true,"service":"BTW assignment intake"}`
 2. Now open the file **`test-submit.html`** (in this same folder) by double-clicking it on your computer.
 3. Paste your Web app URL into the box and click **Send test submissions**.
-4. You should see two green results (one for each role). Then check:
-   - The sheet now has **two tabs**: **Digital Marketing Intern** and **Video Editor Intern**, each with a new TEST row.
-   - HR received **two emails**.
+4. You should see **four green results** (one per role, plus one submission sent twice on purpose to test duplicates). Then check:
+   - The sheet now has **two tabs**: **Digital Marketing Intern** (1 TEST row) and **Video Editor Intern** (2 TEST rows).
+   - HR received **three emails** (not four). The duplicate must not send a second email.
+   - The reply to the 2nd duplicate send says `"duplicate":true`.
    - In the Digital Marketing tab, the test name `=1+1` is shown **exactly as `=1+1`**, not as the number 2. (This proves no formula can run.)
 5. Send the URL to the developer (or continue to Step 9). Delete the TEST rows when you are done.
 
