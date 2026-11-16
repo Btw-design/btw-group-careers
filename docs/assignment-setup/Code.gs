@@ -272,38 +272,119 @@ function formatRoleSheet_(sheet) {
 // The Dashboard tab: counts per role and per review status. Uses live formulas, so it always shows the current numbers.
 function buildDashboard_(ss) {
   var sh = ss.getSheetByName(DASHBOARD) || ss.insertSheet(DASHBOARD, 0);
-  sh.getRange(1, 1, 30, 8).clearContent();
-  var intro = [
-    ['BTW Group: Internship assignment submissions'],
-    ['This page updates by itself. Every role has its own tab. Newest submissions are at the bottom of each tab.'],
-    ['How to review: open a role tab, read the answers, then pick a "Review status" from the dropdown (New, Reviewed, Shortlisted, Not shortlisted) and add notes in "HR notes".'],
-    ['MCQ score is marked automatically. It is only a quick guide: please also read the written answers and the practical task.']
-  ];
-  sh.getRange(1, 1, intro.length, 1).setValues(intro);
-  sh.getRange(1, 1, 1, 1).setFontWeight('bold');
+  var NAVY = '#0B2A47', BLUE = '#0B4A7A', SOFT = '#EEF3F8', LINE = '#D5DEE8';
+  var roles = ALLOWED_ROLES;
+  try { sh.clear(); sh.clearConditionalFormatRules(); sh.setHiddenGridlines(true); } catch (ignore) { /* layout only */ }
 
-  var head = ['Role', 'Total submissions', 'New', 'Reviewed', 'Shortlisted', 'Not shortlisted'];
-  sh.getRange(6, 1, 1, head.length).setValues([head]).setFontWeight('bold');
-  var rows = [];
-  ALLOWED_ROLES.forEach(function (role) {
+  // Formula pieces per role tab (a missing column simply shows a dash).
+  var info = roles.map(function (role) {
     var tab = ss.getSheetByName(role);
     var headers = tab ? readHeaders_(tab) : BASE_HEADERS;
-    var c = colLetter_(headers.indexOf('Review status') + 1);
     var q = "'" + role + "'!";
-    rows.push([
-      role,
-      '=COUNTA(' + q + 'A2:A)',
-      '=COUNTIF(' + q + c + '2:' + c + ',"New")',
-      '=COUNTIF(' + q + c + '2:' + c + ',"Reviewed")',
-      '=COUNTIF(' + q + c + '2:' + c + ',"Shortlisted")',
-      '=COUNTIF(' + q + c + '2:' + c + ',"Not shortlisted")'
-    ]);
+    function col(name) { var i = headers.indexOf(name); return i < 0 ? null : colLetter_(i + 1); }
+    var st = col('Review status'), sc = col('MCQ score');
+    return {
+      role: role, q: q, headers: headers,
+      total: '=COUNTA(' + q + 'A2:A)',
+      reviewed: st ? '=COUNTIF(' + q + st + '2:' + st + ',"Reviewed")' : '=0',
+      short: st ? '=COUNTIF(' + q + st + '2:' + st + ',"Shortlisted")' : '=0',
+      notshort: st ? '=COUNTIF(' + q + st + '2:' + st + ',"Not shortlisted")' : '=0',
+      avg: sc ? '=IFERROR(TEXT(AVERAGE(ARRAYFORMULA(IFERROR(VALUE(LEFT(' + q + sc + '2:' + sc + ',FIND("/",' + q + sc + '2:' + sc + ')-1))/VALUE(MID(' + q + sc + '2:' + sc + ',FIND("/",' + q + sc + '2:' + sc + ')+1,5)),""))),"0%"),"-")' : '="-"',
+      last: '=IFERROR(LOOKUP(2,1/(' + q + 'A2:A<>""),' + q + 'B2:B),"-")',
+      col: col
+    };
   });
-  // setFormulas would turn the plain role name into a formula (=Digital Marketing Intern -> #ERROR!),
-  // so the names go in as text and only the counts are formulas.
-  sh.getRange(7, 1, rows.length, 1).setValues(rows.map(function (r) { return [r[0]]; }));
-  sh.getRange(7, 2, rows.length, 5).setFormulas(rows.map(function (r) { return r.slice(1); }));
-  try { sh.setColumnWidth(1, 240); sh.setFrozenRows(0); } catch (ignore) { /* layout only */ }
+
+  // Title band
+  sh.getRange('A1:H1').merge().setValue('BTW Group: Internship assignments')
+    .setBackground(NAVY).setFontColor('#FFFFFF').setFontSize(18).setFontWeight('bold').setVerticalAlignment('middle');
+  sh.getRange('A2:H2').merge().setValue('Live overview. This page updates by itself. Open a role tab to read the answers, then set the Review status and add HR notes.')
+    .setFontColor('#5B6B7B').setFontStyle('italic').setWrap(true);
+  sh.setRowHeight(1, 44);
+
+  // KPI cards (row 4 label, row 5 number)
+  var tot = info.map(function (r) { return r.total.slice(1); }).join('+');
+  var rev = info.map(function (r) { return r.reviewed.slice(1); }).join('+');
+  var sho = info.map(function (r) { return r.short.slice(1); }).join('+');
+  var nsh = info.map(function (r) { return r.notshort.slice(1); }).join('+');
+  var kpis = [
+    ['Total submissions', '=' + tot],
+    ['Awaiting review', '=(' + tot + ')-(' + rev + ')-(' + sho + ')-(' + nsh + ')'],
+    ['Reviewed', '=' + rev],
+    ['Shortlisted', '=' + sho],
+    ['Not shortlisted', '=' + nsh]
+  ];
+  kpis.forEach(function (k, i) {
+    var c = 1 + i; // columns A..E
+    sh.getRange(4, c).setValue(k[0]).setFontColor('#5B6B7B').setFontSize(10).setBackground(SOFT).setHorizontalAlignment('center');
+    sh.getRange(5, c).setFormula(k[1]).setFontSize(26).setFontWeight('bold').setFontColor(BLUE).setBackground(SOFT).setHorizontalAlignment('center');
+  });
+  sh.setRowHeight(5, 52);
+
+  // By role
+  sh.getRange('A7').setValue('By role').setFontSize(13).setFontWeight('bold').setFontColor(NAVY);
+  var head = ['Role', 'Total', 'Awaiting review', 'Reviewed', 'Shortlisted', 'Not shortlisted', 'Average MCQ score', 'Last submission'];
+  sh.getRange(8, 1, 1, head.length).setValues([head]).setBackground(BLUE).setFontColor('#FFFFFF').setFontWeight('bold').setWrap(true).setVerticalAlignment('middle');
+  info.forEach(function (r, i) {
+    var row = 9 + i;
+    sh.getRange(row, 1).setValue(r.role).setFontWeight('bold');
+    sh.getRange(row, 2).setFormula(r.total);
+    sh.getRange(row, 3).setFormula('=B' + row + '-D' + row + '-E' + row + '-F' + row);
+    sh.getRange(row, 4).setFormula(r.reviewed);
+    sh.getRange(row, 5).setFormula(r.short);
+    sh.getRange(row, 6).setFormula(r.notshort);
+    sh.getRange(row, 7).setFormula(r.avg);
+    sh.getRange(row, 8).setFormula(r.last);
+  });
+  var endRole = 8 + info.length;
+  sh.getRange(9, 2, info.length, 6).setHorizontalAlignment('center');
+  sh.getRange(8, 1, info.length + 1, 8).setBorder(true, true, true, true, true, true, LINE, SpreadsheetApp.BorderStyle.SOLID);
+
+  // Latest submissions (5 per role, newest first)
+  var lt = endRole + 2;
+  sh.getRange(lt, 1).setValue('Latest submissions').setFontSize(13).setFontWeight('bold').setFontColor(NAVY);
+  var lh = ['Role', 'Submitted at (UTC)', 'Name', 'Email', 'Phone', 'MCQ score', 'Review status'];
+  sh.getRange(lt + 1, 1, 1, lh.length).setValues([lh]).setBackground(BLUE).setFontColor('#FFFFFF').setFontWeight('bold');
+  var r0 = lt + 2, n = 0;
+  info.forEach(function (r) {
+    for (var k = 0; k < 5; k++) {
+      var row = r0 + n; n++;
+      var pick = function (name) {
+        var c = r.col(name);
+        return c ? '=IFERROR(INDEX(' + r.q + c + ':' + c + ',COUNTA(' + r.q + 'A:A)-' + k + ')&"","")' : '=""';
+      };
+      var has = 'COUNTA(' + r.q + 'A:A)-' + k + '>1';
+      sh.getRange(row, 1).setFormula('=IF(' + has + ',"' + r.role + '","")');
+      ['Submitted at', 'Name', 'Email', 'Phone', 'MCQ score', 'Review status'].forEach(function (name, j) {
+        sh.getRange(row, 2 + j).setFormula('=IF(' + has + ',' + pick(name).slice(1) + ',"")');
+      });
+    }
+  });
+  sh.getRange(lt + 1, 1, n + 1, 7).setBorder(true, true, true, true, true, true, LINE, SpreadsheetApp.BorderStyle.SOLID);
+
+  // How to use
+  var ht = r0 + n + 1;
+  sh.getRange(ht, 1).setValue('How to review').setFontSize(13).setFontWeight('bold').setFontColor(NAVY);
+  var tips = [
+    '1. Open a role tab. Each candidate is one row, newest at the bottom.',
+    '2. Read the written answers. The MCQ score is marked automatically and is only a quick guide.',
+    '3. Pick a Review status (New, Reviewed, Shortlisted, Not shortlisted) and write notes in HR notes.',
+    '4. Rows with no status yet are counted as "Awaiting review".',
+    '5. HR gets an email for every submission. Press Reply to write to the candidate.'
+  ];
+  sh.getRange(ht + 1, 1, tips.length, 1).setValues(tips.map(function (t) { return [t]; })).setFontColor('#2B3A49');
+
+  try {
+    sh.setColumnWidth(1, 230);
+    [2, 3, 4, 5, 6, 7, 8].forEach(function (c) { sh.setColumnWidth(c, c === 4 ? 230 : 150); });
+    sh.setColumnWidth(3, 170);
+    sh.setFrozenRows(0);
+    // status colours in the Latest table
+    var rg = sh.getRange(r0, 7, n, 1);
+    sh.setConditionalFormatRules(REVIEW_STATUSES.map(function (st) {
+      return SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo(st).setBackground(STATUS_COLORS[st]).setRanges([rg]).build();
+    }));
+  } catch (ignore) { /* layout only */ }
 }
 
 function colLetter_(n) {
